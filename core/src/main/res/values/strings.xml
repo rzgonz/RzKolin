@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Kotlin</string>
+
+    <string name="content_description">Content Description</string>
+
+    <!--string resource for network status-->
+    <string name="status_success">Success</string>
+    <string name="status_failed">Failed</string>
+    <string name="status_canceled">Canceled</string>
+    <string name="status_no_connection">No internet connection</string>
+
+    <!--string resource for label text-->
+    <string name="text_loading">Loading data…</string>
+
+    <!--string resource for error text-->
+    <string name="text_error_empty">Field can\'t be blank</string>
+    <string name="text_error_invalid_email">Email address not valid</string>
+    <string name="text_error_invalid_password_length">Password less than 6</string>
+    <string name="text_error_invalid_password_confirmation">Password confirmation not valid</string>
+    <string name="text_error_invalid_phone">Phone number not valid</string>
+</resources>

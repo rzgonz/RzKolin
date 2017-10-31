@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <declare-styleable name="AppTheme"><attr format="reference" name="noConnectionIcon"/><attr format="reference" name="failedConnectionIcon"/><attr format="reference" name="emptyBackground"/><attr format="reference" name="listBackground"/></declare-styleable>
+    <dimen name="collapsing_toolbar_expanded_title_margin_end">64dp</dimen>
+    <dimen name="collapsing_toolbar_expanded_title_margin_start">48dp</dimen>
+    <dimen name="drop_shadow_default">2dp</dimen>
+    <dimen name="space_extra_large">48dp</dimen>
+    <dimen name="space_extra_small">4dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <string name="app_name">Kotlin</string>
+    <string name="content_description">Content Description</string>
+    <string name="status_canceled">Canceled</string>
+    <string name="status_failed">Failed</string>
+    <string name="status_no_connection">No internet connection</string>
+    <string name="status_success">Success</string>
+    <string name="text_error_empty">Field can\'t be blank</string>
+    <string name="text_error_invalid_email">Email address not valid</string>
+    <string name="text_error_invalid_password_confirmation">Password confirmation not valid</string>
+    <string name="text_error_invalid_password_length">Password less than 6</string>
+    <string name="text_error_invalid_phone">Phone number not valid</string>
+    <string name="text_loading">Loading data…</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

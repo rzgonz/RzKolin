@@ -1,15 +1,10 @@
 package rzgonz.core.kotlin.helper
 
 import android.util.Log
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
-import okhttp3.CertificatePinner
-
 
 
 /**
@@ -27,6 +22,8 @@ object APIHelper {
 
      fun  getClient(): Retrofit {
         if (retrofit == null) {
+            var njing = ""
+
             var client = OkHttpClient().newBuilder().addInterceptor(Interceptor {
                 chain: Interceptor.Chain? ->
                 var original = chain?.request()
@@ -36,6 +33,7 @@ object APIHelper {
 
                 chain?.proceed(request)
             })
+
 
             if(ISHTTPS) {
                 val certificatePinner = CertificatePinner.Builder()
@@ -57,6 +55,8 @@ object APIHelper {
                     .client(client.build())
                     .build()
         }
+
+
 
         return retrofit!!
     }

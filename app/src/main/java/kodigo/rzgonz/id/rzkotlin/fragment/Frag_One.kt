@@ -16,13 +16,14 @@ import rzgonz.core.kotlin.view.CustomeRV
  * A placeholder fragment containing a simple view.
  */
 class Frag_One : BaseFragment<FragmentView.View,FragmentView.Presenter>(),FragmentView.View,CustomeRV.RVListener {
-    override fun onSetData(status: Boolean, message: String, items: ArrayList<Any>) {
+    override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initAdapter(): BaseRVAdapter {
         return AdapterHome(activity,ArrayList<Any>())
     }
+
 
     override fun onLoadItems(limit: Int, offset: Int) {
         mPresenter.loadData(limit,offset)

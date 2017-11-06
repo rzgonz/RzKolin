@@ -17,7 +17,7 @@ import rzgonz.core.kotlin.view.CustomeViewPager
  * A placeholder fragment containing a simple view.
  */
 class PlaceholderFragment : BaseFragment<FragmentView.View, FragmentView.Presenter>(), FragmentView.View,CustomeViewPager.PagerListener{
-    override fun onSetData(status: Boolean, message: String, items: ArrayList<Any>) {
+    override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
 
     }
 

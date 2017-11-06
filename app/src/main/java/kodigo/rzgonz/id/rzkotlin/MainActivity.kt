@@ -57,7 +57,7 @@ class MainActivity : BaseActivity<HomeView.View, HomeView.Presenter>(),HomeView.
         mPresenter.loadData(limit,offset)
     }
 
-    override fun onSetData(status: Boolean, message: String, items: ArrayList<Any>) {
+    override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
         if(status){
             if(rvSample.getAdapter().getItemsCount()>100)
                 items.clear()

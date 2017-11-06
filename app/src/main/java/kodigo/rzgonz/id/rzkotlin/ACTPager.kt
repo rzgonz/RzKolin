@@ -39,7 +39,7 @@ class ACTPager :BaseActivity<ActivityView.View, ActivityView.Presenter>(),Activi
 
     override fun addFragment(): ArrayList<Fragment> {
         var items: ArrayList<Fragment> = ArrayList()
-        items.add(PlaceholderFragment.newInstance(4))
+        items.add(Frag_One.newInstance(4))
         items.add(PlaceholderFragment.newInstance(5))
         items.add(PlaceholderFragment.newInstance(6))
         return items

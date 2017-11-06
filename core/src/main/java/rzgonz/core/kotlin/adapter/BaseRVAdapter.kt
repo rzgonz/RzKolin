@@ -151,7 +151,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     }
 
 
-    fun setItems(items: ArrayList<Any>){
+    fun setItems(items: ArrayList<*>){
         if(items.size==0){
             Log.e("BaseRVAdapter","STOP")
             hidenFooter()

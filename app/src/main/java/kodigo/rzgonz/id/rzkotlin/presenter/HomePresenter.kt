@@ -61,7 +61,7 @@ class HomePresenter : BasePresenterImpl<HomeView.View>(),HomeView.Presenter {
 
             override fun onFailure(call: Call<APIModelArray>, t: Throwable) {
                 // Log error here since request failed
-                mView.onSetData(false,"GAGAL COY",ArrayList())
+                mView.onSetData(false,"GAGAL COY",ArrayList<Any>())
                 Log.e("onFailure", t.toString())
             }
         })

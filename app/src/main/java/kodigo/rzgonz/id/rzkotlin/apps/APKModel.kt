@@ -1,12 +1,12 @@
 package kodigo.rzgonz.id.rzkotlin.apps
 
-import codigo.id.kotlin.apps.RzApps
+import rzgonz.core.kotlin.apps.RzApps
 import rzgonz.core.kotlin.helper.APIHelper
 
 /**
  * Created by rzgonz on 7/12/17.
  */
-class APKModel :RzApps {
+class APKModel : RzApps {
 
     constructor() : super()
 

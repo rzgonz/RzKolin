@@ -1,4 +1,4 @@
-package codigo.id.kotlin.apps
+package rzgonz.core.kotlin.apps
 
 import android.content.Context
 import android.support.multidex.MultiDex

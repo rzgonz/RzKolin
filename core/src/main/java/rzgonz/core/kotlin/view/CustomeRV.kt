@@ -120,7 +120,7 @@ class CustomeRV @JvmOverloads constructor(
                 val positionView = (rv.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
                 Log.e("onScrolled"," "+rv.layoutManager.itemCount + "-->" + positionView + "--> "+ isLoading)
                 if(rv.layoutManager.itemCount - 3 <= positionView)
-                if(!isLoading){
+                if(!isLoading&&adapter.rvPropertise.hasLoadmore){
                     isLoading = true
                     listener.onLoadItems(adapter.rvPropertise.limit, adapter.rvPropertise.offset)
                 }

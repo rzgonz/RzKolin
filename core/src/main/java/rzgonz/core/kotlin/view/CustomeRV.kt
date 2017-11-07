@@ -36,8 +36,6 @@ class CustomeRV @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyle, defStyleRes), SwipeRefreshLayout.OnRefreshListener,View.OnClickListener {
 
     private lateinit var recyclerAdapter: BaseRVAdapter
-
-
     private lateinit var listener: RVListener
     private var isLoading : Boolean = false
 
@@ -48,6 +46,10 @@ class CustomeRV @JvmOverloads constructor(
     fun listener(rvListener: RVListener){
         listener = rvListener
         setAdapter(listener.initAdapter())
+    }
+
+    fun setLinearLayoutManager(layoutManager: LinearLayoutManager){
+        rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,getAdapter().rvPropertise.reverseLayout)
     }
 
     fun setAdapter(adapter: BaseRVAdapter){

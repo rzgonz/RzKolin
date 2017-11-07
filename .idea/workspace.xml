@@ -15,9 +15,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba05e918-4eed-41a1-b15a-63e504664041" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/jarAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/taskJars.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/intermediates/intermediate-jars/debug/classes.jar" afterPath="$PROJECT_DIR$/core/build/intermediates/intermediate-jars/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.len" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/last-build.bin" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/last-build.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/file-to-id.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/file-to-id.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.len" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab_i" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/lookups.tab_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/last-build.bin" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/last-build.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kapt3/incrementalData/debug/rzgonz/core/kotlin/view/CustomeRV.class" afterPath="$PROJECT_DIR$/core/build/tmp/kapt3/incrementalData/debug/rzgonz/core/kotlin/view/CustomeRV.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$1.class" afterPath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$2.class" afterPath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$emptyObserver$1.class" afterPath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV$setAdapter$emptyObserver$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV.class" afterPath="$PROJECT_DIR$/core/build/tmp/kotlin-classes/debug/rzgonz/core/kotlin/view/CustomeRV.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/rzgonz/core/kotlin/view/CustomeRV.kt" afterPath="$PROJECT_DIR$/core/src/main/java/rzgonz/core/kotlin/view/CustomeRV.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/counters.tab" afterPath="$PROJECT_DIR$/core/build/kotlin/kaptGenerateStubsDebugKotlin/caches-jvm/lookups/counters.tab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/tmp/kapt3/stubs/debug/rzgonz/core/kotlin/view/CustomeRV.java" afterPath="$PROJECT_DIR$/core/build/tmp/kapt3/stubs/debug/rzgonz/core/kotlin/view/CustomeRV.java" />
     </list>
     <ignored path="RzKotlin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/kodigo/rzgonz/id/rzkotlin/presenter/HomePresenter.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-45">
-              <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -97,8 +172,8 @@
       <file leaf-file-name="CustomeRV.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/rzgonz/core/kotlin/view/CustomeRV.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+            <state relative-caret-position="201">
+              <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -6534,7 +6609,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222745" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133106" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -6582,7 +6657,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222745" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133106" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -6744,7 +6819,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222746" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133108" />
       </method>
     </configuration>
     <configuration default="false" name="rzaccount" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -6793,7 +6868,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222746" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133108" />
       </method>
     </configuration>
     <configuration default="false" name="traningone" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -6842,7 +6917,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222746" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133108" />
       </method>
     </configuration>
     <configuration default="false" name="traningtwo" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -6891,7 +6966,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510029222747" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1510036133108" />
       </method>
     </configuration>
     <list size="4">
@@ -6946,10 +7021,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24362606" sideWeight="0.49192247" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2907916" sideWeight="0.5090909" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -6963,7 +7038,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23263328" sideWeight="0.4909091" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23263328" sideWeight="0.4909091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Sympli" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -6980,7 +7055,6 @@
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24362606" sideWeight="0.49192247" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2907916" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3512748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -7376,7 +7450,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/kodigo/rzgonz/id/rzkotlin/presenter/HomePresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
-          <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -7425,8 +7499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/rzgonz/core/kotlin/view/CustomeRV.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="51" column="25" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+        <state relative-caret-position="201">
+          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="30" />
           <folding />
         </state>
       </provider>

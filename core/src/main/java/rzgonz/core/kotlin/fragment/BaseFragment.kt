@@ -4,6 +4,7 @@ package rzgonz.core.kotlin.fragment
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
@@ -63,7 +64,7 @@ abstract class BaseFragment<in V: BaseView, P: BasePresenter<V>>: Fragment(), Ba
 
     override fun onDestroy() {
         super.onDestroy()
-     //   mPresenter.detachView()
+       
     }
 
     fun getTitle(): String {
@@ -80,6 +81,19 @@ abstract class BaseFragment<in V: BaseView, P: BasePresenter<V>>: Fragment(), Ba
 
     fun attachStyle(): Int? {
         return null
+    }
+    fun getStatusBarHeight(): Int {
+        var result = 0
+        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        if (resourceId > 0) {
+            result = resources.getDimensionPixelSize(resourceId)
+        }
+        return result
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("onDetach","")
     }
 
 

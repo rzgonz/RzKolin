@@ -8,8 +8,7 @@ import rzgonz.core.kotlin.Interface.BaseView
  */
 open class BasePresenterImpl<V : BaseView> : BasePresenter<V> {
 
-    protected lateinit var mView: V
-
+    lateinit var mView: V
     override fun attachView(view: V) {
         mView = view
     }

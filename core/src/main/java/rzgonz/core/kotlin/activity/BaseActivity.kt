@@ -19,11 +19,9 @@ abstract class BaseActivity<in V: BaseView, P: BasePresenter<V>> : AppCompatActi
         super.onCreate(savedInstanceState)
         setContentView(initLayout())
         //initLayout()
+        mPresenter.attachView(this as V)
         initUI()
 
-
-
-        mPresenter.attachView(this as V)
     }
 
     override fun getContext(): Context = this
@@ -55,6 +53,14 @@ abstract class BaseActivity<in V: BaseView, P: BasePresenter<V>> : AppCompatActi
         Glide.with(context).load(url).into(this)
     }
 
+    fun getStatusBarHeight(): Int {
+        var result = 0
+        val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
+        if (resourceId > 0) {
+            result = resources.getDimensionPixelSize(resourceId)
+        }
+        return result
+    }
 
 
 

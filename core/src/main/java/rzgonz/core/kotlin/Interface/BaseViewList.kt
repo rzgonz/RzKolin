@@ -1,11 +1,11 @@
 package rzgonz.core.kotlin.Interface
 
-import rzgonz.core.kotlin.view.CustomeRV
+import java.util.ArrayList
 
 
 /**
  * Created by rzgonz on 7/10/17.
  */
 interface BaseViewList:BaseView {
-    fun onSetData(status:Boolean, message:String, items: ArrayList<*>)
+    fun onSetData(status:Boolean, message:String, items: ArrayList<*> = java.util.ArrayList<Any>())
 }

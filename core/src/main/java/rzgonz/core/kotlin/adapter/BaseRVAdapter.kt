@@ -1,6 +1,7 @@
 package rzgonz.core.kotlin.adapter
 
 import android.content.Context
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -32,7 +33,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     var hasFooter : Boolean = false
     var hasLoadMore : Boolean = false
     var hasRefresh  : Boolean = false
-
+    var orientation:Int = GridLayoutManager.HORIZONTAL
     var colomCount : Int = 1
 
     var rvPropertise : RvPropertise = RvPropertise()
@@ -49,9 +50,10 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
         hasLoadMore = rvPropertise.hasLoadmore
         colomCount = rvPropertise.colomCount
         hasRefresh = rvPropertise.hasRefresh
+        orientation = rvPropertise.orientation
 
 
-        if(rvPropertise.hasFooter)
+        if(rvPropertise.hasHeadear)
             countExtra++
 
         if(rvPropertise.hasFooter)
@@ -61,7 +63,11 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
 
     override fun onBindViewHolder(holder: BaseItemHolder, position: Int) {
         if (getItemViewType(position) == VIEW_TYPE_ITEM) {
-            onBindViewHolderItem(holder, position, position - 1)
+            if(hasHeader){
+                onBindViewHolderItem(holder, position, position -1 )
+            }else{
+                onBindViewHolderItem(holder, position, position )
+            }
         } else {
             onBindViewHolderOther(holder, position)
         }
@@ -80,13 +86,13 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
             else
                 return onCreateViewHolderItem(parent, viewType)
 
-
         } else if (viewType == VIEW_TYPE_FOOTER) {
             //footerView.setBackgroundColor(android.R.color.holo_blue_bright)
             if(hasFooter) {
                 val v = LayoutInflater.from(c).inflate(R.layout.cell_loading, parent, false)
              //   headerView.setBackgroundColor(android.R.color.black)
                 footerView  = CellLoading(v)
+                footerView!!.loadMore(hasLoadMore);
                 return footerView as CellLoading
             }
             else
@@ -98,16 +104,25 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     }
 
     override fun getItemCount(): Int {
+        if(items.size==0){
+            return 0
+        }
         return items.size+countExtra
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (position > 0 && position < itemCount - 1)
-            VIEW_TYPE_ITEM
-        else if (position == 0) VIEW_TYPE_HEADER else VIEW_TYPE_FOOTER
+//        return if (!hasHeader && position >= 0 && position < getItemsCount()) VIEW_TYPE_ITEM
+//        else if (position == 0) VIEW_TYPE_HEADER
+//        else if(!hasFooter && position == getItemsCount()) VIEW_TYPE_ITEM
+//        else if(hasFooter && position < getItemsCount()) VIEW_TYPE_ITEM
+//        else VIEW_TYPE_FOOTER
+
+        return if(hasHeader && position==0) VIEW_TYPE_HEADER
+        else if(hasFooter && position > getItemsCount()) VIEW_TYPE_FOOTER
+        else if(hasHeader && position <= getItemsCount()) VIEW_TYPE_ITEM
+        else if(position < getItemsCount()) VIEW_TYPE_ITEM
+        else VIEW_TYPE_FOOTER
     }
-
-
 
 
     /**
@@ -143,15 +158,26 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
         notifyItemInserted(items.size)
     }
 
+    private fun showFooter(){
+        //  footerView.visibility = View.GONE
+        if(footerView!=null) {
+            footerView!!.itemView.visibility = View.VISIBLE
+        }
+        notifyItemChanged(getItemsCount())
+    }
 
     private fun hidenFooter(){
       //  footerView.visibility = View.GONE
-        footerView!!.itemView.visibility = View.GONE
+        if(footerView!=null) {
+            footerView!!.itemView.visibility = View.GONE
+        }
         notifyItemChanged(getItemsCount())
     }
 
 
     fun setItems(items: ArrayList<*>){
+       // hidenFooter()
+        showFooter()
         if(items.size==0){
             Log.e("BaseRVAdapter","STOP")
             hidenFooter()
@@ -175,6 +201,14 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
 //            itemImage.loadUrl(item.url)
 //            setOnClickListener { listener(item) }
 //        }
+
+        public fun loadMore(loadMore : Boolean){
+            Log.d("CellLoading","loadMore $loadMore")
+            if(!loadMore){
+                itemView.visibility = View.GONE
+            }
+
+        }
     }
 
 

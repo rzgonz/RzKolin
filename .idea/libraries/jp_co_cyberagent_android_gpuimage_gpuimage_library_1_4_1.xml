@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="jp.co.cyberagent.android.gpuimage:gpuimage-library-1.4.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gpuimage-library-1.4.1.aar/86bdf8448c98808a72bcb62e260edc1a/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gpuimage-library-1.4.1.aar/86bdf8448c98808a72bcb62e260edc1a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gpuimage-library-1.4.1.aar/8ec1b522061ba6823b8b8f0a91e048c1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gpuimage-library-1.4.1.aar/8ec1b522061ba6823b8b8f0a91e048c1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -1,7 +1,6 @@
 package rzgonz.core.kotlin.view
 
 import android.content.Context
-import android.database.DataSetObservable
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.GridLayoutManager
 
@@ -15,14 +14,9 @@ import android.widget.FrameLayout
 import rzgonz.core.kotlin.R
 import kotlinx.android.synthetic.main.custome_recycle_view.view.*
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
-import java.util.ArrayList
-import android.database.DataSetObserver
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlin.coroutines.experimental.buildSequence
+import kotlinx.android.synthetic.main.view_loading.view.*
 
 
 /**
@@ -55,32 +49,12 @@ class CustomeRV @JvmOverloads constructor(
     fun setAdapter(adapter: BaseRVAdapter){
         recyclerAdapter = adapter
         rv.adapter = adapter
-        rv.layoutManager = GridLayoutManager(context,adapter.colomCount)
+        rv.layoutManager = GridLayoutManager(context,adapter.colomCount,getAdapter().rvPropertise.orientation,false)
         swl.isEnabled = false
         if(adapter.rvPropertise.hasRefresh) {
             swl.isEnabled = true
             swl.setOnRefreshListener(this)
         }
-        listener.onLoadItems(adapter.rvPropertise.limit,adapter.rvPropertise.offset)
-
-        (rv.layoutManager as GridLayoutManager).spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-            override fun getSpanSize(position: Int): Int {
-                if(adapter.rvPropertise.hasHeadear){
-                    if(position==0){
-                        return adapter.rvPropertise.colomCount
-                    }
-                }
-
-                if(adapter.rvPropertise.hasFooter){
-                    if(position>adapter.getItems().size){
-                        return adapter.rvPropertise.colomCount
-                    }
-                }
-
-                return 1 // OTHER ITEMS OCCUPY ONLY A SINGLE SPACE
-            }
-        }
-
         val emptyObserver = object : RecyclerView.AdapterDataObserver() {
 
             override fun onItemRangeChanged(positionStart: Int, itemCount: Int) {
@@ -94,22 +68,47 @@ class CustomeRV @JvmOverloads constructor(
             }
             override fun onChanged() {
                 super.onChanged()
-                Log.e("AdapterDataObserver","onChanged")
+                llLoading.visibility = View.GONE
             }
 
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
                 super.onItemRangeInserted(positionStart, itemCount)
                 Log.e("AdapterDataObserver","false")
+                frameLoading.visibility = View.GONE
                 if(adapter.rvPropertise.hasLoadmore) {
-                        isLoading = false
+                    isLoading = false
                 }
                 if(adapter.rvPropertise.hasRefresh) {
                     swl.isRefreshing = false
                 }
+
             }
         }
 
         recyclerAdapter.registerAdapterDataObserver(emptyObserver)
+
+        listener.onLoadItems(adapter.rvPropertise.limit,adapter.rvPropertise.offset)
+
+        (rv.layoutManager as GridLayoutManager).spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                if(adapter.rvPropertise.hasHeadear){
+                    if(position==0){
+                        return adapter.rvPropertise.colomCount
+                    }
+                }
+
+                if(adapter.rvPropertise.hasFooter){
+                    if(position>=adapter.itemCount -1 &&adapter.hasLoadMore){
+                        return adapter.rvPropertise.colomCount
+                    }
+                }
+
+                return 1 // OTHER ITEMS OCCUPY ONLY A SINGLE SPACE
+            }
+        }
+
+
+
 
         rv.addOnScrollListener(object : RecyclerView.OnScrollListener(){
 
@@ -124,13 +123,17 @@ class CustomeRV @JvmOverloads constructor(
                 if(rv.layoutManager.itemCount - 3 <= positionView)
                 if(!isLoading&&adapter.rvPropertise.hasLoadmore){
                     isLoading = true
-                    listener.onLoadItems(adapter.rvPropertise.limit, adapter.rvPropertise.offset)
+                    listener.onLoadItems(adapter.rvPropertise.limit, adapter.getItemsCount())
                 }
             }
         })
+    }
 
-
-
+    fun errorLoading(){
+        swl.isRefreshing = false
+        llLoading.visibility = View.GONE
+        view_reload.visibility = View.VISIBLE
+        view_reload.setOnClickListener(this)
     }
 
     fun getAdapter(): BaseRVAdapter {
@@ -139,14 +142,19 @@ class CustomeRV @JvmOverloads constructor(
 
     override fun onRefresh() {
         Log.d("onRefresh","false")
+        isLoading = true
+        frameLoading.visibility = View.VISIBLE
+        llLoading.visibility = View.VISIBLE
+        view_reload.visibility = View.GONE
         getAdapter().getItems().clear()
         getAdapter().notifyDataSetChanged()
         getAdapter().rvPropertise.offset = 0
         listener.onLoadItems(getAdapter().rvPropertise.limit, getAdapter().rvPropertise.offset)
+
     }
 
     override fun onClick(p0: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        onRefresh()
     }
 
     interface RVListener {

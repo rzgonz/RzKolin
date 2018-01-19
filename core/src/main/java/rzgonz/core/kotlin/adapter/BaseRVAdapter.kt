@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import rzgonz.core.kotlin.R
 import rzgonz.core.kotlin.model.RvPropertise
 import rzgonz.core.kotlin.holder.BaseItemHolder
+import rzgonz.core.kotlin.view.CellFooter
+import rzgonz.core.kotlin.view.CellLoading
 import kotlin.properties.Delegates
 
 /**
@@ -19,15 +21,16 @@ import kotlin.properties.Delegates
 abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.Adapter<BaseItemHolder>() {
 
     val VIEW_TYPE_HEADER = 0
-    val VIEW_TYPE_ITEM = 1
-    val VIEW_TYPE_FOOTER= 2
+    val VIEW_TYPE_FOOTER= 1
+    val VIEW_TYPE_ITEM = 2
+
 
     var c : Context by Delegates.notNull()
 
     private var items = ArrayList<Any>()
 
     var headerView: CellLoading? = null
-    var footerView: CellLoading? = null
+    var footerView: CellFooter? = null
 
     var hasHeader : Boolean = false
     var hasFooter : Boolean = false
@@ -37,6 +40,8 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     var colomCount : Int = 1
 
     var rvPropertise : RvPropertise = RvPropertise()
+
+    lateinit var  footerCallBack : CellFooter.cellFooterCallback
 
     var countExtra = 0;
 
@@ -62,7 +67,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: BaseItemHolder, position: Int) {
-        if (getItemViewType(position) == VIEW_TYPE_ITEM) {
+        if (getItemViewType(position) != VIEW_TYPE_HEADER && getItemViewType(position) != VIEW_TYPE_FOOTER) {
             if(hasHeader){
                 onBindViewHolderItem(holder, position, position -1 )
             }else{
@@ -74,7 +79,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseItemHolder {
-        if (viewType == VIEW_TYPE_ITEM) {
+        if (viewType != VIEW_TYPE_HEADER && viewType != VIEW_TYPE_FOOTER) {
             Log.d("onCreateViewHolder","VIEW_TYPE_ITEM")
             return onCreateViewHolderItem(parent, viewType)
         } else if (viewType == VIEW_TYPE_HEADER) {
@@ -89,11 +94,12 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
         } else if (viewType == VIEW_TYPE_FOOTER) {
             //footerView.setBackgroundColor(android.R.color.holo_blue_bright)
             if(hasFooter) {
-                val v = LayoutInflater.from(c).inflate(R.layout.cell_loading, parent, false)
+                val v = LayoutInflater.from(c).inflate(R.layout.cell_footer, parent, false)
              //   headerView.setBackgroundColor(android.R.color.black)
-                footerView  = CellLoading(v)
-                footerView!!.loadMore(hasLoadMore);
-                return footerView as CellLoading
+                footerView  = CellFooter(v)
+                footerView?.setListener(footerCallBack)
+                footerView!!.loadMore(hasLoadMore)
+                return footerView as CellFooter
             }
             else
                 return onCreateViewHolderItem(parent, viewType)
@@ -119,8 +125,8 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
 
         return if(hasHeader && position==0) VIEW_TYPE_HEADER
         else if(hasFooter && position > getItemsCount()) VIEW_TYPE_FOOTER
-        else if(hasHeader && position <= getItemsCount()) VIEW_TYPE_ITEM
-        else if(position < getItemsCount()) VIEW_TYPE_ITEM
+        else if(hasHeader && position <= getItemsCount()) VIEW_TYPE_ITEM+position
+        else if(position < getItemsCount()) VIEW_TYPE_ITEM+position
         else VIEW_TYPE_FOOTER
     }
 
@@ -194,21 +200,8 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
      */
     protected abstract fun setRv(): RvPropertise
 
-
-    class CellLoading(itemView: View) : BaseItemHolder(itemView) {
-//        fun bind(item: Item, listener: (Item) -> Unit) = with(itemView) {
-//            itemTitle.text = item.title
-//            itemImage.loadUrl(item.url)
-//            setOnClickListener { listener(item) }
-//        }
-
-        public fun loadMore(loadMore : Boolean){
-            Log.d("CellLoading","loadMore $loadMore")
-            if(!loadMore){
-                itemView.visibility = View.GONE
-            }
-
-        }
+    fun setListener(listener:CellFooter.cellFooterCallback) {
+        footerCallBack = listener
     }
 
 

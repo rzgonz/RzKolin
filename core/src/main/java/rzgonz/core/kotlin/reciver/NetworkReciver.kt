@@ -15,7 +15,7 @@ open class NetworkReciver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val status = ConstantNetwork.getConnectivityStatus(context)
         Log.d("NetworkReciver","status $status")
-        Toast.makeText(context,"NETWORK",Toast.LENGTH_LONG).show()
+        //Toast.makeText(context,"NETWORK",Toast.LENGTH_LONG).show()
         if (status == ConstantNetwork.TYPE_NOT_CONNECTED) {
 
         }

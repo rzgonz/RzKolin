@@ -3,14 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-def dbflow_version = "4.1.1"
+
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion  rootProject.ext.targetSdkVersion
         versionCode 3
         versionName "0.0.4"
         multiDexEnabled true
@@ -38,24 +38,23 @@ androidExtensions {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.github.bumptech.glide:glide:4.3.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    compile 'com.android.support:design:26.1.0'
-    compile 'com.android.support:recyclerview-v7:26.1.0'
-    compile 'net.gotev:uploadservice:3.0.3'
-    compile 'jp.wasabeef:glide-transformations:3.0.1'
-    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
-    compile 'uk.co.chrisjenx:calligraphy:2.3.0'
-    compile 'com.android.support:multidex:1.0.2'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    compile "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    compile "net.gotev:uploadservice:$uploadService"
+    compile "jp.wasabeef:glide-transformations:$glideTransform"
+    compile "jp.co.cyberagent.android.gpuimage:gpuimage-library:$gpuImage"
+    compile "uk.co.chrisjenx:calligraphy:$calligraphy"
+    compile "com.android.support:multidex:$multidex"
+    compile "com.squareup.retrofit2:retrofit:$retrofit"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit"
     // Use if Kotlin user.
-    kapt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
-    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.18'
-    testCompile 'junit:junit:4.12'
+    kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbFlow"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
 }
 
 repositories {

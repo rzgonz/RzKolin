@@ -15,6 +15,25 @@ buildscript {
         classpath 'com.google.gms:google-services:3.1.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
+
+    ext {
+        kotlinVersion = '1.1.61'
+        kotlinCoroutines = '0.18'
+        buildToolsVersion = '26.0.2'
+        compileSdkVersion = 26
+        minSdkVersion = 19
+        targetSdkVersion = 26
+        supportLibraryVersion = '26.1.0'
+        firebaseVersion = '11.8.0'
+        uploadService = '3.0.3'
+        retrofit = '2.3.0'
+        glide = '4.3.1'
+        glideTransform = '3.0.1'
+        calligraphy = '2.3.0'
+        multidex = '1.0.2'
+        gpuImage = "1.4.1"
+        dbFlow = "4.1.1"
+    }
 }
 
 allprojects {

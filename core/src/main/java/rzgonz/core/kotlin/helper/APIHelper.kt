@@ -11,27 +11,36 @@ import java.io.IOException
  * Created by rzgonz on 8/2/17.
  */
 object APIHelper {
-
     var BASE_URL = ""
-    var Authorization = ""
+    //var Authorization = ""
+    var Headers:HashMap<String,String> = HashMap()
     var HOST_NAME = ""
     var PUBLIC_KEY_HASH= ""
     var ISHTTPS = false
 
     private var retrofit: Retrofit? = null
 
-     fun  getClient(): Retrofit {
+     fun  getClient(headers: HashMap<String, String> = HashMap()): Retrofit {
         if (retrofit == null) {
-            var njing = ""
 
-            var client = OkHttpClient().newBuilder().addInterceptor(Interceptor {
+            val client = OkHttpClient().newBuilder().addInterceptor(Interceptor {
                 chain: Interceptor.Chain? ->
-                var original = chain?.request()
-                var request = original?.newBuilder()
-                        ?.header("Authorization", Authorization)
-                        ?.method(original?.method(), original?.body())?.build()
+                val original = chain?.request()
+                val request = original?.newBuilder()
+                        //?.header("Authorization", Authorization)
+                        ?.method(original?.method(), original?.body())
 
-                chain?.proceed(request)
+                for(data in headers){
+                    Headers.set(data.key,data.value)
+                }
+
+                for (items in Headers){
+                    request?.addHeader(items.key,items.value)
+                }
+
+
+
+                chain?.proceed(request?.build()!!)
             })
 
 
@@ -43,20 +52,16 @@ object APIHelper {
 
                 val tlsSocketFactory: TLSSocketFactory
 
-
                 tlsSocketFactory = TLSSocketFactory()
                 client.sslSocketFactory(tlsSocketFactory, tlsSocketFactory.systemDefaultTrustManager())
             }
 
-            Log.e("APIHelper", BASE_URL+"-->"+ Authorization)
             retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client.build())
                     .build()
         }
-
-
 
         return retrofit!!
     }

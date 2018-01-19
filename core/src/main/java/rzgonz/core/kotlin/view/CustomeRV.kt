@@ -9,13 +9,12 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-
-import android.widget.FrameLayout
 import rzgonz.core.kotlin.R
-import kotlinx.android.synthetic.main.custome_recycle_view.view.*
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.FrameLayout
+import kotlinx.android.synthetic.main.custome_recycle_view.view.*
 import kotlinx.android.synthetic.main.view_loading.view.*
 
 
@@ -25,9 +24,8 @@ import kotlinx.android.synthetic.main.view_loading.view.*
 class CustomeRV @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
-        defStyle: Int = 0,
-        defStyleRes: Int = 0
-) : FrameLayout(context, attrs, defStyle, defStyleRes), SwipeRefreshLayout.OnRefreshListener,View.OnClickListener {
+        defStyle: Int = 0
+) : FrameLayout(context, attrs, defStyle), SwipeRefreshLayout.OnRefreshListener,View.OnClickListener,CellFooter.cellFooterCallback {
 
     private lateinit var recyclerAdapter: BaseRVAdapter
     private lateinit var listener: RVListener
@@ -68,7 +66,7 @@ class CustomeRV @JvmOverloads constructor(
             }
             override fun onChanged() {
                 super.onChanged()
-                llLoading.visibility = View.GONE
+                //llLoading.visibility = View.INVISIBLE
             }
 
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
@@ -81,8 +79,8 @@ class CustomeRV @JvmOverloads constructor(
                 if(adapter.rvPropertise.hasRefresh) {
                     swl.isRefreshing = false
                 }
-
             }
+
         }
 
         recyclerAdapter.registerAdapterDataObserver(emptyObserver)
@@ -127,13 +125,26 @@ class CustomeRV @JvmOverloads constructor(
                 }
             }
         })
+
+        recyclerAdapter.setListener(this)
     }
 
     fun errorLoading(){
         swl.isRefreshing = false
-        llLoading.visibility = View.GONE
-        view_reload.visibility = View.VISIBLE
-        view_reload.setOnClickListener(this)
+        llLoading.visibility = View.INVISIBLE
+        if(getAdapter().hasLoadMore){
+            if(getAdapter().hasFooter){
+                getAdapter().footerView?.errorLoading()
+            }
+        }else{
+            view_reload.visibility = View.VISIBLE
+            view_reload.setOnClickListener(this)
+        }
+
+    }
+
+    fun getLayoutManager(): RecyclerView.LayoutManager? {
+        return rv.layoutManager
     }
 
     fun getAdapter(): BaseRVAdapter {
@@ -153,7 +164,13 @@ class CustomeRV @JvmOverloads constructor(
 
     }
 
+    override fun onReaload(position: Int) {
+        Log.d("onReaload","error")
+        listener.onLoadItems(getAdapter().rvPropertise.limit, position)
+    }
+
     override fun onClick(p0: View?) {
+        Log.d("onClick","refresh")
         onRefresh()
     }
 

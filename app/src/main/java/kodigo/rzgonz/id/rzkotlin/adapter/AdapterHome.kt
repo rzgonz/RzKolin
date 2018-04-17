@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import kodigo.rzgonz.id.rzkotlin.R
+import kodigo.rzgonz.id.rzkotlin.apps.APKModel
 import rzgonz.core.kotlin.model.RvPropertise
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 import rzgonz.core.kotlin.holder.BaseItemHolder
@@ -39,11 +41,14 @@ class AdapterHome(c: Context, items: ArrayList<Any>) : BaseRVAdapter(c, items) {
 
 
     class Item(itemView: View) : BaseItemHolder(itemView) {
-//        fun bind(item: Item, listener: (Item) -> Unit) = with(itemView) {
-//            itemTitle.text = item.title
-//            itemImage.loadUrl(item.url)
-//            setOnClickListener { listener(item) }
-//        }
+        var tvJudul = itemView.findViewById<TextView>(R.id.textView)
+
+        init {
+            APKModel.getBusComponent().topSubject.subscribe({
+                tvJudul.setText(it)
+            })
+        }
+
     }
 
 

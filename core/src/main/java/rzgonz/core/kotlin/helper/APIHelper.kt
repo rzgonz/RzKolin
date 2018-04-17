@@ -1,8 +1,10 @@
 package rzgonz.core.kotlin.helper
 
 import android.util.Log
+import io.reactivex.plugins.RxJavaPlugins
 import okhttp3.*
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
@@ -28,7 +30,7 @@ object APIHelper {
                 val original = chain?.request()
                 val request = original?.newBuilder()
                         //?.header("Authorization", Authorization)
-                        ?.method(original?.method(), original?.body())
+                        ?.method(original.method(), original.body())
 
                 for(data in headers){
                     Headers.set(data.key,data.value)
@@ -37,8 +39,6 @@ object APIHelper {
                 for (items in Headers){
                     request?.addHeader(items.key,items.value)
                 }
-
-
 
                 chain?.proceed(request?.build()!!)
             })
@@ -59,6 +59,7 @@ object APIHelper {
             retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(client.build())
                     .build()
         }

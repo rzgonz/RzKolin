@@ -5,14 +5,14 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import rzgonz.core.kotlin.Interface.BaseView
 import rzgonz.core.kotlin.fragment.BaseFragment
-import rzgonz.core.kotlin.presenter.BasePresenter
+import rzgonz.core.kotlin.contract.BaseContract
 
 /**
  * Created by rzgonz on 9/19/17.
  */
 class BasePagerAdapter : FragmentStatePagerAdapter{
 
-    private val items: ArrayList<BaseFragment<BaseView, BasePresenter<BaseView>>> = ArrayList()
+    private val items: ArrayList<BaseFragment<BaseView, BaseContract<BaseView>>> = ArrayList()
 
     constructor(fm: FragmentManager?) : super(fm)
 
@@ -24,7 +24,7 @@ class BasePagerAdapter : FragmentStatePagerAdapter{
        return items.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence {
+    override fun getPageTitle(position: Int): String? {
         return items[position].tag
     }
 

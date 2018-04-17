@@ -13,21 +13,20 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import rzgonz.core.kotlin.Interface.BaseView
-import rzgonz.core.kotlin.config.Config
-import rzgonz.core.kotlin.presenter.BasePresenter
+import rzgonz.core.kotlin.contract.BaseContract
 
 /**
  * Created by rzgonz on 9/19/17.
  */
-abstract class BaseFragment<in V: BaseView, P: BasePresenter<V>>: Fragment(), BaseView {
+abstract class BaseFragment<in V: BaseView, P: BaseContract<V>>: Fragment(), BaseView {
 
    protected abstract var mPresenter: P
 
     private var title = javaClass.simpleName
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val rootView =  inflater!!.inflate(initLayout(), container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView =  inflater.inflate(initLayout(), container, false)
         mPresenter.attachView(this as V)
         val resourceStyle = attachStyle()
         if (resourceStyle != null) {
@@ -37,13 +36,13 @@ abstract class BaseFragment<in V: BaseView, P: BasePresenter<V>>: Fragment(), Ba
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initUI()
         super.onViewCreated(view, savedInstanceState)
     }
 
 
-    override fun getContext(): Context = activity
+    override fun getContext(): Context = this.activity!!
 
 
     override fun showError(error: String?) {
@@ -64,7 +63,7 @@ abstract class BaseFragment<in V: BaseView, P: BasePresenter<V>>: Fragment(), Ba
 
     override fun onDestroy() {
         super.onDestroy()
-       
+
     }
 
     fun getTitle(): String {

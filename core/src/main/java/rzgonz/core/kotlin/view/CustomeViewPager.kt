@@ -16,7 +16,7 @@ import rzgonz.core.kotlin.R
  * Created by rzgonz on 9/20/17.
  */
 
-class CustomeViewPager(context: Context?, attrs: AttributeSet?) : ViewPager(context, attrs) {
+class CustomeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
     lateinit var listener: PagerListener
     init {
         LayoutInflater.from(context).inflate(R.layout.custome_pager_view, this, true)

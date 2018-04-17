@@ -3,10 +3,9 @@ package kodigo.rzgonz.id.rzkotlin.fragment
 import android.os.Bundle
 import kodigo.rzgonz.id.rzkotlin.R
 import kodigo.rzgonz.id.rzkotlin.adapter.AdapterHome
-import kodigo.rzgonz.id.rzkotlin.interfaces.FragmentView
+import kodigo.rzgonz.id.rzkotlin.contract.FragmentContract
 import kodigo.rzgonz.id.rzkotlin.presenter.FragmentPresenter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_act_tab.*
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 import rzgonz.core.kotlin.config.Config
 import rzgonz.core.kotlin.fragment.BaseFragment
@@ -15,13 +14,13 @@ import rzgonz.core.kotlin.view.CustomeRV
 /**
  * A placeholder fragment containing a simple view.
  */
-class Frag_One : BaseFragment<FragmentView.View,FragmentView.Presenter>(),FragmentView.View,CustomeRV.RVListener {
+class Frag_One : BaseFragment<FragmentContract.View, FragmentContract.Presenter>(),FragmentContract.View,CustomeRV.RVListener {
     override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initAdapter(): BaseRVAdapter {
-        return AdapterHome(activity,ArrayList<Any>())
+        return AdapterHome(context,ArrayList<Any>())
     }
 
 
@@ -43,7 +42,7 @@ class Frag_One : BaseFragment<FragmentView.View,FragmentView.Presenter>(),Fragme
     }
 
 
-    override var mPresenter: FragmentView.Presenter = FragmentPresenter()
+    override var mPresenter: FragmentContract.Presenter = FragmentPresenter()
 
     companion object {
         /**

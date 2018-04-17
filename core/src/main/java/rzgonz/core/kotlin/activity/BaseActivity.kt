@@ -7,18 +7,17 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import rzgonz.core.kotlin.Interface.BaseView
-import rzgonz.core.kotlin.presenter.BasePresenter
+import rzgonz.core.kotlin.contract.BaseContract
 
 /**
  * Created by rzgonz on 7/10/17.
  */
-abstract class BaseActivity<in V: BaseView, P: BasePresenter<V>> : AppCompatActivity(), BaseView{
+abstract class BaseActivity<in V: BaseView, P: BaseContract<V>> : AppCompatActivity(), BaseView{
     protected abstract var mPresenter: P
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(initLayout())
-        //initLayout()
         mPresenter.attachView(this as V)
         initUI()
 

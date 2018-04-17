@@ -5,32 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvSample"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
     <Button
         android:id="@+id/btnSample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Rx"
        />
+
+    <Button
+        android:id="@+id/btnOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OnlyRetro 2"
+        android:layout_alignParentRight="true"
+        />
 
     <ImageView
         android:id="@+id/imgSample"
         android:layout_width="108dp"
         android:layout_height="101dp"
         app:srcCompat="@mipmap/ic_launcher"
-
-
+        android:layout_centerInParent="true"
         />
+
+
 
     <rzgonz.core.kotlin.view.CustomeRV
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rvSample" />
+        android:id="@+id/rvSample"
+        android:visibility="visible">
 
 
+    </rzgonz.core.kotlin.view.CustomeRV>
+
+    <TextView
+        android:id="@+id/tvSample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

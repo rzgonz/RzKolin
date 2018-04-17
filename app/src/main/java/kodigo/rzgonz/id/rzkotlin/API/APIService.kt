@@ -1,6 +1,8 @@
 package kodigo.rzgonz.id.rzkotlin.API
 
+import io.reactivex.Observable
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -21,4 +23,9 @@ interface APIService {
 
     @GET("DroidListCore/")
     fun getHttps(): Call<Any>
+
+    @GET("category/all_category/")
+    fun rxCOba(): Observable<Response<APIModelArray>>
+
+
 }

@@ -6,23 +6,35 @@ import android.view.Menu
 import android.view.MenuItem
 import kodigo.rzgonz.id.rzkotlin.fragment.Frag_One
 import kodigo.rzgonz.id.rzkotlin.fragment.PlaceholderFragment
-import kodigo.rzgonz.id.rzkotlin.interfaces.ActivityView
+import kodigo.rzgonz.id.rzkotlin.contract.ActivityContract
 import kodigo.rzgonz.id.rzkotlin.presenter.ActvityPresenter
 import kotlinx.android.synthetic.main.activity_actpager.*
 import rzgonz.core.kotlin.activity.BaseActivity
 import rzgonz.core.kotlin.view.CustomeViewPager
+import io.reactivex.disposables.CompositeDisposable
+import kodigo.rzgonz.id.rzkotlin.ijection.component.BusComponent
+import kodigo.rzgonz.id.rzkotlin.ijection.component.DaggerBusComponent
 
-class ACTPager :BaseActivity<ActivityView.View, ActivityView.Presenter>(),ActivityView.View,CustomeViewPager.PagerListener {
+
+
+
+class ACTPager :BaseActivity<ActivityContract.View, ActivityContract.Presenter>(),ActivityContract.View,CustomeViewPager.PagerListener {
+
+
+
 
     override fun initLayout(): Int {
         return R.layout.activity_actpager
     }
+
+
 
     override fun initUI() {
         cvpOne.listener = this
         cvpOne.setAdapter(this)
         cvpOne.setBackgroundResource(android.R.color.holo_red_dark)
     }
+
 
     override fun initViewTabLayout() {
         val tabLayout = findViewById<TabLayout>(R.id.tabs)
@@ -35,7 +47,7 @@ class ACTPager :BaseActivity<ActivityView.View, ActivityView.Presenter>(),Activi
         return R.id.cvpOne
     }
 
-    override var mPresenter: ActivityView.Presenter = ActvityPresenter()
+    override var mPresenter: ActivityContract.Presenter = ActvityPresenter()
 
     override fun addFragment(): ArrayList<Fragment> {
         var items: ArrayList<Fragment> = ArrayList()

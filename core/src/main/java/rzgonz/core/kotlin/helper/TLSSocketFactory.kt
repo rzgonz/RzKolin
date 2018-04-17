@@ -69,7 +69,7 @@ constructor() : SSLSocketFactory() {
 
     private fun enableTLSOnSocket(socket: Socket?): Socket {
         if (socket != null && socket is SSLSocket) {
-            (socket as SSLSocket).setEnabledProtocols(arrayOf("TLSv1.1", "TLSv1.2"))
+            socket.setEnabledProtocols(arrayOf("TLSv1.1", "TLSv1.2"))
         }
         return socket!!
     }

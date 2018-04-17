@@ -1,23 +1,27 @@
 package kodigo.rzgonz.id.rzkotlin.presenter
 
 import android.util.Log
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kodigo.rzgonz.id.rzkotlin.API.APIModel
 import kodigo.rzgonz.id.rzkotlin.API.APIModelArray
 import kodigo.rzgonz.id.rzkotlin.API.APIService
-import kodigo.rzgonz.id.rzkotlin.interfaces.HomeView
+import kodigo.rzgonz.id.rzkotlin.contract.HomeContract
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import rzgonz.core.kotlin.helper.APIHelper
-import rzgonz.core.kotlin.presenter.BasePresenterImpl
+import rzgonz.core.kotlin.presenter.BasePresenter
 
 
 /**
  * Created by rzgonz on 7/10/17.
  */
-class HomePresenter : BasePresenterImpl<HomeView.View>(),HomeView.Presenter {
+class HomePresenter : BasePresenter<HomeContract.View>(),HomeContract.Presenter {
 
     val apiService = APIHelper.getClient().create(APIService::class.java)
+
 
     override fun loadRepository(name: String) {
         Log.d("HomePresenter","loadRepository")
@@ -27,6 +31,23 @@ class HomePresenter : BasePresenterImpl<HomeView.View>(),HomeView.Presenter {
 
 
     override fun loadHttps() {
+        Log.d("TAG", "Number of movies received: ")
+        var rx = apiService.rxCOba().subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext {
+                    for (i in 0..100){
+                        Log.d("TAG", "next 1 $i ")
+                    }
+                }.doOnNext {
+                    for (i in 0..100){
+                        Log.d("TAG", "next 2 $i ")
+                    }
+                }.subscribe({
+                        Log.d("TAG", "next $")
+                    },{
+                        Log.d("TAG", "error $")
+                    })
+
 
 //        val call = apiService.getHttps()
 //
@@ -54,7 +75,7 @@ class HomePresenter : BasePresenterImpl<HomeView.View>(),HomeView.Presenter {
         Log.d("TAG", "Number of movies received: ")
         call.enqueue(object : Callback<APIModelArray> {
             override fun onResponse(call: Call<APIModelArray>, response: Response<APIModelArray>) {
-                val movies = response.body()!!.toString()
+                val movies = response.body().toString()
                 Log.d("onResponse", "Number of movies received: " + movies)
                 mView.onSetData(true, (response.body() as APIModelArray).message, (response.body() as APIModelArray).data)
             }

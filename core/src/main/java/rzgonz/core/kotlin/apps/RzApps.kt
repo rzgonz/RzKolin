@@ -17,6 +17,7 @@ open class RzApps : MultiDexApplication() {
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
+
     }
 
     companion object {

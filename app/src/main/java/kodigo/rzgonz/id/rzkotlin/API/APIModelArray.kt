@@ -6,11 +6,12 @@ import com.google.gson.annotations.Expose
  * Created by rzgonz on 8/2/17.
  */
 
-class APIModelArray {
-    var status: String = ""
-    var message: String = ""
-    @Expose
-    lateinit var data: ArrayList<Any>
+data class APIModelArray(
+        var status: String = "",
+        var message: String = "",
+        @Expose
+        var data: ArrayList<Any> = ArrayList())
+{
     override fun toString(): String {
         return "APIModel(status='$status', message='$message', data='$data')"
     }

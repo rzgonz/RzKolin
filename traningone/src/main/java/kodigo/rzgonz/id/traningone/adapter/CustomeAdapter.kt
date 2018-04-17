@@ -14,7 +14,7 @@ import kodigo.rzgonz.id.traningone.R
  */
 class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyViewHolder) {
             holder.tvOne?.setText("--> " + items!!.get(position))
             holder.imgOne?.setImageResource(images!!.get(position))
@@ -30,7 +30,7 @@ class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return items!!.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int):MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyViewHolder {
 
         var view = LayoutInflater.from(context).inflate(R.layout.cell_sample,parent,false)
 

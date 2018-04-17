@@ -1,10 +1,12 @@
 package kodigo.rzgonz.id.rzkotlin.fragment
 
 import android.os.Bundle
-import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
+import android.util.Log
+import kodigo.rzgonz.id.rzkotlin.ACTPager
 import kodigo.rzgonz.id.rzkotlin.R
-import kodigo.rzgonz.id.rzkotlin.interfaces.FragmentView
+import kodigo.rzgonz.id.rzkotlin.contract.FragmentContract
+import kodigo.rzgonz.id.rzkotlin.ijection.module.BusModule
 import kodigo.rzgonz.id.rzkotlin.presenter.FragmentPresenter
 import kotlinx.android.synthetic.main.activity_actpager.*
 import rzgonz.core.kotlin.fragment.BaseFragment
@@ -16,19 +18,19 @@ import rzgonz.core.kotlin.view.CustomeViewPager
 /**
  * A placeholder fragment containing a simple view.
  */
-class PlaceholderFragment : BaseFragment<FragmentView.View, FragmentView.Presenter>(), FragmentView.View,CustomeViewPager.PagerListener{
+class PlaceholderFragment : BaseFragment<FragmentContract.View,FragmentContract.Presenter>(),FragmentContract.View,CustomeViewPager.PagerListener{
     override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
 
     }
 
-    override var mPresenter: FragmentView.Presenter = FragmentPresenter()
+    override var mPresenter: FragmentContract.Presenter = FragmentPresenter()
     override fun initLayout(): Int {
         return R.layout.activity_actpager
     }
 
     override fun initUI() {
         cvpOne.listener = this
-        cvpOne.setAdapter(activity)
+        cvpOne.setAdapter(activity!!)
         cvpOne.setBackgroundResource(android.R.color.holo_red_dark)
     }
 

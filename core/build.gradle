@@ -7,12 +7,11 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion  rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "0.0.4"
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName '0.1.0'
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -26,6 +25,8 @@ android {
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
     }
+    productFlavors {
+    }
 }
 
 kotlin {
@@ -36,25 +37,39 @@ kotlin {
 androidExtensions {
     experimental = true
 }
+kapt {
+    generateStubs true
+}
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
-    compile "com.github.bumptech.glide:glide:$glide"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
-    implementation "com.android.support:design:$supportLibraryVersion"
-    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
-    compile "net.gotev:uploadservice:$uploadService"
-    compile "jp.wasabeef:glide-transformations:$glideTransform"
-    compile "jp.co.cyberagent.android.gpuimage:gpuimage-library:$gpuImage"
-    compile "uk.co.chrisjenx:calligraphy:$calligraphy"
-    compile "com.android.support:multidex:$multidex"
-    compile "com.squareup.retrofit2:retrofit:$retrofit"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit"
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //android
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api "com.android.support:appcompat-v7:$supportLibraryVersion"
+    api "com.android.support:design:$supportLibraryVersion"
+    api "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    api "com.android.support:multidex:$multidex"
+    //text
+    api "uk.co.chrisjenx:calligraphy:$calligraphy"
+    //network
+    api "com.squareup.retrofit2:retrofit:$retrofit"
+    api "net.gotev:uploadservice:$uploadService"
+    api "com.squareup.retrofit2:converter-gson:$retrofit"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
     // Use if Kotlin user.
     kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbFlow"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
+    //rxjava
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
+    api "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    api "io.reactivex.rxjava2:rxkotlin:$rxJava"
+    //glide
+    api "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+    api "jp.wasabeef:glide-transformations:$glideTransform"
+    api "jp.co.cyberagent.android.gpuimage:gpuimage-library:$gpuImage"
+    //dagger
+    api "com.google.dagger:dagger:$dagger"
+    kapt ("com.google.dagger:dagger-compiler:$dagger")
 }
 
 repositories {

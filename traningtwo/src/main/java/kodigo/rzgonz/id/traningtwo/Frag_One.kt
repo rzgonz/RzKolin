@@ -25,9 +25,8 @@ class Frag_One : Fragment(),ApiCall {
 
     private lateinit var adapter: CustomeAdapter
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val rootView = inflater!!.inflate(R.layout.fragment_act_tab, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_act_tab, container, false)
         adapter = CustomeAdapter(context)
         Handler().postDelayed(Runnable {
             Log.d("dadar","adasds")
@@ -36,9 +35,9 @@ class Frag_One : Fragment(),ApiCall {
     }
 
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvSection.text = getString(R.string.section_format, arguments.getInt(ARG_SECTION_NUMBER))
+        tvSection.text = getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER))
         tvSection.text = "adsasdsad"
         rvOne.adapter = adapter
         rvOne.layoutManager = GridLayoutManager(activity,2)

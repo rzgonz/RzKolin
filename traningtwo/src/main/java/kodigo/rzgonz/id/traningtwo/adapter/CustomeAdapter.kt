@@ -16,7 +16,7 @@ import kodigo.rzgonz.id.traningtwo.R
  */
 class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyViewHolder) {
 //            var gson = items?.get(position)
           //  Log.e("CustomeAdapter",gson.toString()+"-->"+position)
@@ -24,15 +24,15 @@ class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
-    var items: ArrayList<String>? = null
+    var items: ArrayList<String> = ArrayList()
     var context: Context? = null
 
 
     override fun getItemCount(): Int {
-        return items!!.size
+        return items.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int):MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         var view = LayoutInflater.from(context).inflate(R.layout.cell_items,parent,false)
 

@@ -5,22 +5,18 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
-import dagger.internal.DaggerCollections
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import kodigo.rzgonz.id.rzkotlin.adapter.AdapterHome
 import kodigo.rzgonz.id.rzkotlin.apps.APKModel
 import kodigo.rzgonz.id.rzkotlin.contract.HomeContract
 import kodigo.rzgonz.id.rzkotlin.presenter.HomePresenter
-import kodigo.rzgonz.id.traningone.MainActivity
-import kodigo.rzgonz.id.traningone.view.KotlinHome
 import kotlinx.android.synthetic.main.activity_main.*
 import rzgonz.core.kotlin.activity.BaseActivity
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
-import rzgonz.core.kotlin.injection.component.DaggerNetworkComponent
 import rzgonz.core.kotlin.view.CustomeRV
+import rzgonz.id.dicore.SampleDI
 import java.util.concurrent.TimeUnit
 
 
@@ -45,6 +41,9 @@ class MainActivity : BaseActivity<HomeContract.View, HomeContract.Presenter>(),H
             for ( i in 1..1000){
              mPresenter.loadHttps()
              }
+
+
+            Log.d("sa"," cabe ${SampleDI.dataSaya}")
 
 
             //DaggerBattleComponent.builder()

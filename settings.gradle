@@ -1,1 +1,1 @@
-include ':app', ':core', ':rzaccount', ':traningone', ':traningtwo', ':rzsamplemodule', ':rzsamplemodule', ':instantapp'
+include ':app', ':core', ':rzaccount', ':traningone', ':traningtwo', ':rzsamplemodule', ':rzsamplemodule', ':instantapp', ':dicore'

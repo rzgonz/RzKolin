@@ -32,9 +32,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation project(':core')
-    kapt ("com.google.dagger:dagger-compiler:$dagger")
+    kapt("com.google.dagger:dagger-compiler:$dagger")
     implementation project(':traningone')
     androidTestImplementation 'junit:junit:4.12'
+    implementation project(':dicore')
 }
 repositories {
     mavenCentral()

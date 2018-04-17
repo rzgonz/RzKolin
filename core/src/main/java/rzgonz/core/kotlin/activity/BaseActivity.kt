@@ -20,7 +20,6 @@ abstract class BaseActivity<in V: BaseView, P: BaseContract<V>> : AppCompatActiv
         setContentView(initLayout())
         mPresenter.attachView(this as V)
         initUI()
-
     }
 
     override fun getContext(): Context = this
@@ -46,7 +45,6 @@ abstract class BaseActivity<in V: BaseView, P: BaseContract<V>> : AppCompatActiv
         super.onDestroy()
         mPresenter.detachView()
     }
-
 
     override fun ImageView.loadImageWeb(url: String) {
         Glide.with(context).load(url).into(this)

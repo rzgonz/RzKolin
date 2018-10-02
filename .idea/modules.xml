@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RzKolin.iml" filepath="$PROJECT_DIR$/RzKolin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RzKolin (copy).iml" filepath="$PROJECT_DIR$/RzKolin (copy).iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bebek/bebek.iml" filepath="$PROJECT_DIR$/bebek/bebek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bebek/bebek.iml" filepath="$PROJECT_DIR$/bebek/bebek.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dadar/dadar.iml" filepath="$PROJECT_DIR$/dadar/dadar.iml" />
       <module fileurl="file://$PROJECT_DIR$/dadar/dadar.iml" filepath="$PROJECT_DIR$/dadar/dadar.iml" />
       <module fileurl="file://$PROJECT_DIR$/dicore/dicore.iml" filepath="$PROJECT_DIR$/dicore/dicore.iml" />
       <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />

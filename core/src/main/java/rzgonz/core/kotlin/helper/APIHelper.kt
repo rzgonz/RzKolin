@@ -1,12 +1,12 @@
 package rzgonz.core.kotlin.helper
 
 import android.util.Log
-import io.reactivex.plugins.RxJavaPlugins
-import okhttp3.*
+import okhttp3.CertificatePinner
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 
 
 /**
@@ -21,6 +21,12 @@ object APIHelper {
     var ISHTTPS = false
 
     private var retrofit: Retrofit? = null
+
+    private var authInterceptor : Interceptor? = null
+
+    fun setAuthInterceptor(interceptor: Interceptor){
+        authInterceptor = interceptor
+    }
 
      fun  getClient(headers: HashMap<String, String> = HashMap()): Retrofit {
         if (retrofit == null) {
@@ -43,10 +49,13 @@ object APIHelper {
                 chain?.proceed(request?.build()!!)
             })
 
+            if(authInterceptor!=null){
+                client.addInterceptor(authInterceptor)
+            }
+            if(BASE_URL.contains("https")&& PUBLIC_KEY_HASH.isNotEmpty()) {
 
-            if(ISHTTPS) {
                 val certificatePinner = CertificatePinner.Builder()
-                        .add(HOST_NAME, PUBLIC_KEY_HASH)
+                        .add(BASE_URL.split("/").get(2), PUBLIC_KEY_HASH)
                         .build()
                 client.certificatePinner(certificatePinner).build()
 

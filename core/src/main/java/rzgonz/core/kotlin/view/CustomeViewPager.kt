@@ -33,10 +33,10 @@ class CustomeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(conte
     }
 
 
-    fun setAdapter(activity: FragmentActivity) {
+    fun setAdapter(activity: FragmentActivity?) {
         //mSectionsPagerAdapter = SectionsPagerAdapter(context.supportFragmentManager)
         // Set up the ViewPager with the sections adapter.
-        this.adapter = SectionsPagerAdapter(activity.supportFragmentManager)
+        this.adapter = activity?.supportFragmentManager?.let { SectionsPagerAdapter(it) }
         listener.initViewTabLayout()
         // val tabLayout = findViewById(R.id.tabs) as TabLayout
 //        tabLayout.setupWithViewPager(vp)

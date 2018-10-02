@@ -16,7 +16,7 @@ object HomeContract  {
     }
 
 
-    interface Presenter : BaseContract<View> {
+    interface Presenter : BaseContract.Presenter<View> {
 
         fun loadRepository(name: String)
         fun loadData(limit:Int,offset:Int)

@@ -12,17 +12,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import rzgonz.core.kotlin.Interface.BaseView
 import rzgonz.core.kotlin.contract.BaseContract
 
 /**
  * Created by rzgonz on 9/19/17.
  */
-abstract class BaseFragment<in V: BaseView, P: BaseContract<V>>: Fragment(), BaseView {
+abstract class BaseFragment<in V: BaseContract.View, P: BaseContract.Presenter<V>>: Fragment(), BaseContract.View {
 
    protected abstract var mPresenter: P
 
     private var title = javaClass.simpleName
+
+    override fun getContext(): Context {
+        return activity!!.baseContext
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -37,13 +40,9 @@ abstract class BaseFragment<in V: BaseView, P: BaseContract<V>>: Fragment(), Bas
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        initUI()
+        initUI(savedInstanceState)
         super.onViewCreated(view, savedInstanceState)
     }
-
-
-    override fun getContext(): Context = this.activity!!
-
 
     override fun showError(error: String?) {
         Toast.makeText(activity, error, Toast.LENGTH_LONG).show()
@@ -60,6 +59,9 @@ abstract class BaseFragment<in V: BaseView, P: BaseContract<V>>: Fragment(), Bas
     override fun showMessage(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
+    override fun ImageView.loadImageWeb(url: String) {
+        Glide.with(context).load(url).into(this)
+    }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -74,9 +76,7 @@ abstract class BaseFragment<in V: BaseView, P: BaseContract<V>>: Fragment(), Bas
         this.title = title
     }
 
-    override fun ImageView.loadImageWeb(url: String) {
-        Glide.with(context).load(url).into(this)
-    }
+
 
     fun attachStyle(): Int? {
         return null

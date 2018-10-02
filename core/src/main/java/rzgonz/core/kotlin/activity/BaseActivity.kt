@@ -6,23 +6,25 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import rzgonz.core.kotlin.Interface.BaseView
 import rzgonz.core.kotlin.contract.BaseContract
 
 /**
  * Created by rzgonz on 7/10/17.
  */
-abstract class BaseActivity<in V: BaseView, P: BaseContract<V>> : AppCompatActivity(), BaseView{
+abstract class BaseActivity<in V: BaseContract.View, P: BaseContract.Presenter<V>> : AppCompatActivity(), BaseContract.View{
     protected abstract var mPresenter: P
 
+    @Suppress("UNCHECKED_CAST")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(initLayout())
-        mPresenter.attachView(this as V)
-        initUI()
+        mPresenter.attachView(view = this as V)
+        initUI(savedInstanceState)
     }
 
-    override fun getContext(): Context = this
+    override fun getContext(): Context {
+        return  baseContext
+    }
 
 
     override fun showError(error: String?) {
@@ -41,14 +43,15 @@ abstract class BaseActivity<in V: BaseView, P: BaseContract<V>> : AppCompatActiv
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
+    override fun ImageView.loadImageWeb(url: String) {
+        Glide.with(context).load(url).into(this)
+    }
     override fun onDestroy() {
         super.onDestroy()
         mPresenter.detachView()
     }
 
-    override fun ImageView.loadImageWeb(url: String) {
-        Glide.with(context).load(url).into(this)
-    }
+
 
     fun getStatusBarHeight(): Int {
         var result = 0

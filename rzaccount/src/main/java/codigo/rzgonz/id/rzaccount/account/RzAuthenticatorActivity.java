@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import codigo.rzgonz.id.rzaccount.R;
 import codigo.rzgonz.id.rzaccount.account.config.AccountCofig;
-import codigo.rzgonz.id.rzaccount.account.presenter.ServerAuthenticatePresenter;
 
 import static codigo.rzgonz.id.rzaccount.account.config.AccountCofig.ARG_IS_ADDING_NEW_ACCOUNT;
 import static codigo.rzgonz.id.rzaccount.account.config.AccountCofig.sServerAuthenticate;

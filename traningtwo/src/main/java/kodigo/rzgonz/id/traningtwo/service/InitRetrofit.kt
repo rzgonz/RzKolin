@@ -1,10 +1,8 @@
 package kodigo.rzgonz.id.traningtwo.service
 
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.Retrofit
-import com.google.gson.GsonBuilder
-import com.google.gson.Gson
 import kodigo.rzgonz.id.traningtwo.service.rest.ApiService
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * Created by rzgonz on 9/19/17.

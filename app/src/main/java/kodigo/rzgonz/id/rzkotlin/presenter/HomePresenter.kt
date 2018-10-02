@@ -1,10 +1,8 @@
 package kodigo.rzgonz.id.rzkotlin.presenter
 
 import android.util.Log
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kodigo.rzgonz.id.rzkotlin.API.APIModel
 import kodigo.rzgonz.id.rzkotlin.API.APIModelArray
 import kodigo.rzgonz.id.rzkotlin.API.APIService
 import kodigo.rzgonz.id.rzkotlin.contract.HomeContract

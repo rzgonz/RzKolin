@@ -8,12 +8,12 @@ import rzgonz.core.kotlin.contract.BaseContract
  */
 object FragmentContract  {
 
-    interface View : BaseViewList{
+    interface View : BaseContract.View{
 
     }
 
 
-    interface Presenter : BaseContract<View> {
+    interface Presenter : BaseContract.Presenter<View> {
         fun loadData(limit:Int,offset:Int)
     }
 }

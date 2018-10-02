@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import kodigo.rzgonz.id.rzkotlin.R
 import kodigo.rzgonz.id.rzkotlin.apps.APKModel
-import rzgonz.core.kotlin.model.RvPropertise
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 import rzgonz.core.kotlin.holder.BaseItemHolder
-import java.util.ArrayList
+import rzgonz.core.kotlin.model.RvPropertise
+import java.util.*
 
 /**
  * Created by rzgonz on 7/11/17.

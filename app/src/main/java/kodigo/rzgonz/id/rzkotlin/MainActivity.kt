@@ -1,6 +1,7 @@
 package kodigo.rzgonz.id.rzkotlin
 
 import android.content.Intent
+import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -16,10 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import rzgonz.core.kotlin.activity.BaseActivity
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 import rzgonz.core.kotlin.view.CustomeRV
-import rzgonz.id.dicore.SampleDI
 import java.util.concurrent.TimeUnit
-
-
 
 
 class MainActivity : BaseActivity<HomeContract.View, HomeContract.Presenter>(),HomeContract.View,CustomeRV.RVListener{
@@ -31,7 +29,7 @@ class MainActivity : BaseActivity<HomeContract.View, HomeContract.Presenter>(),H
 
     var com : CompositeDisposable = CompositeDisposable()
 
-    override fun initUI(){
+    override fun initUI(savedInstanceState: Bundle?) {
         tvSample.text = "HELLO SAMPKE"
         btnSample.setOnClickListener {
             tvSample.text = "ON CLick Man"
@@ -43,7 +41,7 @@ class MainActivity : BaseActivity<HomeContract.View, HomeContract.Presenter>(),H
              }
 
 
-            Log.d("sa"," cabe ${SampleDI.dataSaya}")
+          //  Log.d("sa"," cabe ${SampleDI.dataSaya}")
 
 
             //DaggerBattleComponent.builder()

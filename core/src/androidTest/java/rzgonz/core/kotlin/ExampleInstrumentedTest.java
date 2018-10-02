@@ -1,8 +1,5 @@
 package rzgonz.core.kotlin;
 
-import android.content.Context;
-
-
 /**
  * Instrumentation test, which will execute on an Android device.
  *

@@ -1,6 +1,5 @@
 package kodigo.rzgonz.id.rzkotlin.contract
 
-import rzgonz.core.kotlin.Interface.BaseView
 import rzgonz.core.kotlin.contract.BaseContract
 
 /**
@@ -9,12 +8,12 @@ import rzgonz.core.kotlin.contract.BaseContract
 
 object ActivityContract {
 
-    interface View : BaseView{
+    interface View : BaseContract.View{
 
     }
 
 
-    interface Presenter : BaseContract<View> {
+    interface Presenter : BaseContract.Presenter<View> {
 
     }
 }

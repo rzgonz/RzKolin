@@ -15,10 +15,6 @@ import rzgonz.core.kotlin.view.CustomeRV
  * A placeholder fragment containing a simple view.
  */
 class Frag_One : BaseFragment<FragmentContract.View, FragmentContract.Presenter>(),FragmentContract.View,CustomeRV.RVListener {
-    override fun onSetData(status: Boolean, message: String, items: ArrayList<*>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     override fun initAdapter(): BaseRVAdapter {
         return AdapterHome(context,ArrayList<Any>())
     }
@@ -36,7 +32,7 @@ class Frag_One : BaseFragment<FragmentContract.View, FragmentContract.Presenter>
       return  R.layout.activity_main
     }
 
-    override fun initUI() {
+    override fun initUI(savedInstanceState: Bundle?) {
        // tvSection.text = " kampret " +arguments.getInt(Config.PARAMS_FRG)
         rvSample.listener(this)
     }

@@ -1,35 +1,26 @@
 package kodigo.rzgonz.id.rzkotlin
 
+import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.view.Menu
 import android.view.MenuItem
+import kodigo.rzgonz.id.rzkotlin.contract.ActivityContract
 import kodigo.rzgonz.id.rzkotlin.fragment.Frag_One
 import kodigo.rzgonz.id.rzkotlin.fragment.PlaceholderFragment
-import kodigo.rzgonz.id.rzkotlin.contract.ActivityContract
 import kodigo.rzgonz.id.rzkotlin.presenter.ActvityPresenter
 import kotlinx.android.synthetic.main.activity_actpager.*
 import rzgonz.core.kotlin.activity.BaseActivity
 import rzgonz.core.kotlin.view.CustomeViewPager
-import io.reactivex.disposables.CompositeDisposable
-import kodigo.rzgonz.id.rzkotlin.ijection.component.BusComponent
-import kodigo.rzgonz.id.rzkotlin.ijection.component.DaggerBusComponent
-
-
 
 
 class ACTPager :BaseActivity<ActivityContract.View, ActivityContract.Presenter>(),ActivityContract.View,CustomeViewPager.PagerListener {
-
-
-
 
     override fun initLayout(): Int {
         return R.layout.activity_actpager
     }
 
-
-
-    override fun initUI() {
+    override fun initUI(savedInstanceState: Bundle?) {
         cvpOne.listener = this
         cvpOne.setAdapter(this)
         cvpOne.setBackgroundResource(android.R.color.holo_red_dark)

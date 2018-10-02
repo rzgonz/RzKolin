@@ -5,7 +5,6 @@ import kodigo.rzgonz.id.rzkotlin.ijection.component.DaggerBusComponent
 import kodigo.rzgonz.id.rzkotlin.ijection.module.BusModule
 import rzgonz.core.kotlin.apps.RzApps
 import rzgonz.core.kotlin.helper.APIHelper
-import rzgonz.core.kotlin.injection.module.ApiModule
 
 /**
  * Created by rzgonz on 7/12/17.

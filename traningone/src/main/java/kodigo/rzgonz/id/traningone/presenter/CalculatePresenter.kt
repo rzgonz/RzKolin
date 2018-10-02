@@ -1,13 +1,7 @@
 package kodigo.rzgonz.id.traningone.presenter
 
 import android.content.Context
-import android.content.DialogInterface
-import android.content.Intent
-import android.support.v7.app.AlertDialog
-import android.widget.Toast
 import kodigo.rzgonz.id.traningone.model.CalculateModel
-import kodigo.rzgonz.id.traningone.view.ACT_Basic
-import kodigo.rzgonz.id.traningone.view.ACT_Three
 
 /**
  * Created by rzgonz on 9/18/17.

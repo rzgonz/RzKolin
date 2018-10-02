@@ -35,7 +35,6 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:$dagger")
     implementation project(':traningone')
     androidTestImplementation 'junit:junit:4.12'
-    implementation project(':dicore')
 }
 repositories {
     mavenCentral()

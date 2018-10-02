@@ -1,21 +1,20 @@
 package rzgonz.core.kotlin.view
 
+
 import android.content.Context
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.GridLayoutManager
-
-
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import rzgonz.core.kotlin.R
-import rzgonz.core.kotlin.adapter.BaseRVAdapter
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.custome_recycle_view.view.*
 import kotlinx.android.synthetic.main.view_loading.view.*
+import rzgonz.core.kotlin.R
+import rzgonz.core.kotlin.adapter.BaseRVAdapter
 
 
 /**

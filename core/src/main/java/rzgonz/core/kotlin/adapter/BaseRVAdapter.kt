@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import rzgonz.core.kotlin.R
-import rzgonz.core.kotlin.model.RvPropertise
 import rzgonz.core.kotlin.holder.BaseItemHolder
+import rzgonz.core.kotlin.model.RvPropertise
 import rzgonz.core.kotlin.view.CellFooter
 import rzgonz.core.kotlin.view.CellLoading
 import kotlin.properties.Delegates

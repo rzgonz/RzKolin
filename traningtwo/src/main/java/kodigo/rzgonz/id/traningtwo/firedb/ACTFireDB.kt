@@ -1,15 +1,12 @@
 package kodigo.rzgonz.id.traningtwo.firedb
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
 import com.google.firebase.database.*
-
 import kodigo.rzgonz.id.traningtwo.R
 import kotlinx.android.synthetic.main.activity_actfire_db.*
-import com.google.firebase.database.DataSnapshot
-
 
 
 class ACTFireDB : AppCompatActivity() {

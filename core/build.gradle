@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName '0.1.0'
+        versionCode 2
+        versionName '1.1.0'
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -52,6 +52,9 @@ dependencies {
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
     api "com.android.support:design:$supportLibraryVersion"
     api "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    api "com.android.support:cardview-v7:$supportLibraryVersion"
+    api "com.android.support:support-v4:$supportLibraryVersion"
+    
     api "com.android.support:multidex:$multidex"
     //text
     api "uk.co.chrisjenx:calligraphy:$calligraphy"
@@ -60,17 +63,18 @@ dependencies {
     api "net.gotev:uploadservice:$uploadService"
     api "com.squareup.retrofit2:converter-gson:$retrofit"
     api "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
     // Use if Kotlin user.
     kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbFlow"
     //rxjava
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
     api "io.reactivex.rxjava2:rxandroid:$rxAndroid"
     api "io.reactivex.rxjava2:rxkotlin:$rxJava"
-    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    api 'com.github.tbruyelle:rxpermissions:0.10.2'
 
     //glide
     api "com.github.bumptech.glide:glide:$glide"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide"
     api "jp.wasabeef:glide-transformations:$glideTransform"
     api "jp.co.cyberagent.android.gpuimage:gpuimage-library:$gpuImage"
     //dagger

@@ -2,7 +2,10 @@ package rzgonz.core.kotlin.activity
 
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.ImageView
@@ -26,6 +29,10 @@ abstract class DIBaseActivity : AppCompatActivity(), DIBaseContract.View {
         super.onDestroy()
         onDetachView()
         progressDialog = null
+    }
+
+    override fun getContext(): Context {
+        return getContext()
     }
 
     fun showProgressDialog(context: Context?, message: String?, isCancelable: Boolean) {
@@ -68,6 +75,17 @@ abstract class DIBaseActivity : AppCompatActivity(), DIBaseContract.View {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun goToPermissionSettings(context: Context) {
+        Toast.makeText(context,"Kamu harus mengijinkan perijinan melalui pengaturan", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent()
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+        val uri = Uri.fromParts("package", context.packageName, null)
+        intent.data = uri
+        context.startActivity(intent)
     }
 
 }

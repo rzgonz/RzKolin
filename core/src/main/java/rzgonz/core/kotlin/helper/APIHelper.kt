@@ -4,9 +4,12 @@ import android.util.Log
 import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+
+
 
 
 /**
@@ -31,8 +34,7 @@ object APIHelper {
      fun  getClient(headers: HashMap<String, String> = HashMap()): Retrofit {
         if (retrofit == null) {
 
-            val client = OkHttpClient().newBuilder().addInterceptor(Interceptor {
-                chain: Interceptor.Chain? ->
+            val client = OkHttpClient().newBuilder().addInterceptor { chain: Interceptor.Chain? ->
                 val original = chain?.request()
                 val request = original?.newBuilder()
                         //?.header("Authorization", Authorization)
@@ -47,7 +49,7 @@ object APIHelper {
                 }
 
                 chain?.proceed(request?.build()!!)
-            })
+            }
 
             if(authInterceptor!=null){
                 client.addInterceptor(authInterceptor)
@@ -64,6 +66,16 @@ object APIHelper {
                 tlsSocketFactory = TLSSocketFactory()
                 client.sslSocketFactory(tlsSocketFactory, tlsSocketFactory.systemDefaultTrustManager())
             }
+
+            val logging = HttpLoggingInterceptor()
+// set your desired log level
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+// add your other interceptors …
+
+// add logging as last interceptor
+             client.addInterceptor(logging)  // <-- this is the important line!
+
 
             retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)

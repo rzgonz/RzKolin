@@ -193,7 +193,21 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
         this.items.addAll(items)
         notifyItemRangeInserted(this.items.size,this.items.size)
     }
+    fun setItems(items: List<*>){
+        // hidenFooter()
+        showFooter()
+        if(items.size==0){
+            Log.e("BaseRVAdapter","STOP")
+            hidenFooter()
+            hasLoadMore = false
+            return
+        }
+        for (data in items){
+            this.items.add(data!!)
+        }
 
+        notifyItemRangeInserted(this.items.size,this.items.size)
+    }
 
     /**
      * custom Recycle view

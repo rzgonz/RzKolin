@@ -43,6 +43,9 @@ class CustomeRV @JvmOverloads constructor(
         rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,getAdapter().rvPropertise.reverseLayout)
     }
 
+    fun getRv():RecyclerView{
+        return rv
+    }
     fun setAdapter(adapter: BaseRVAdapter){
         recyclerAdapter = adapter
         rv.adapter = adapter

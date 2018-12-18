@@ -184,6 +184,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
     fun setItems(items: ArrayList<*>){
        // hidenFooter()
         showFooter()
+        val before =this.items.size
         if(items.size==0){
             Log.e("BaseRVAdapter","STOP")
             hidenFooter()
@@ -191,10 +192,11 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
             return
         }
         this.items.addAll(items)
-        notifyItemRangeInserted(this.items.size,this.items.size)
+        notifyItemRangeInserted(before,this.items.size)
     }
     fun setItems(items: List<*>){
         // hidenFooter()
+        val before =this.items.size
         showFooter()
         if(items.size==0){
             Log.e("BaseRVAdapter","STOP")
@@ -206,7 +208,7 @@ abstract class BaseRVAdapter(c:Context, items: ArrayList<Any>)  : RecyclerView.A
             this.items.add(data!!)
         }
 
-        notifyItemRangeInserted(this.items.size,this.items.size)
+        notifyItemRangeInserted(before,this.items.size)
     }
 
     /**

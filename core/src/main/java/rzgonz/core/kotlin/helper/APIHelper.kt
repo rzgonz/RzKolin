@@ -8,8 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-
-
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -50,6 +49,9 @@ object APIHelper {
 
                 chain?.proceed(request?.build()!!)
             }
+            client.connectTimeout(30, TimeUnit.SECONDS);
+            client.readTimeout(30, TimeUnit.SECONDS);
+            client.writeTimeout(90, TimeUnit.SECONDS);
 
             if(authInterceptor!=null){
                 client.addInterceptor(authInterceptor)

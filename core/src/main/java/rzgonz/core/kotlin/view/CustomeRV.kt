@@ -66,10 +66,6 @@ class CustomeRV @JvmOverloads constructor(
                 Log.e("AdapterDataObserver","onItemRangeRemoved")
                 super.onItemRangeRemoved(positionStart, itemCount)
             }
-            override fun onChanged() {
-                super.onChanged()
-                //llLoading.visibility = View.INVISIBLE
-            }
 
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
                 super.onItemRangeInserted(positionStart, itemCount)
@@ -109,18 +105,13 @@ class CustomeRV @JvmOverloads constructor(
 
 
 
-
         rv.addOnScrollListener(object : RecyclerView.OnScrollListener(){
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-            }
-
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val positionView = (rv.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
-                Log.e("onScrolled"," "+rv.layoutManager.itemCount + "-->" + positionView + "--> "+ isLoading)
-                if(rv.layoutManager.itemCount - 3 <= positionView)
+                Log.e("onScrolled"," "+ (rv.layoutManager as LinearLayoutManager).itemCount + "-->" + positionView + "--> "+ isLoading)
+                if((rv.layoutManager as LinearLayoutManager).itemCount - 3 <= positionView)
                 if(!isLoading&&adapter.rvPropertise.hasLoadmore){
                     isLoading = true
                     listener.onLoadItems(adapter.rvPropertise.limit, adapter.getItemsCount())

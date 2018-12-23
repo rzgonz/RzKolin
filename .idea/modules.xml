@@ -3,11 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RzKolin.iml" filepath="$PROJECT_DIR$/RzKolin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RzKolin.iml" filepath="$PROJECT_DIR$/RzKolin.iml" />
       <module fileurl="file://$PROJECT_DIR$/RzKolin (copy).iml" filepath="$PROJECT_DIR$/RzKolin (copy).iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/rzaccount/rzaccount.iml" filepath="$PROJECT_DIR$/rzaccount/rzaccount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rzaccount/rzaccount.iml" filepath="$PROJECT_DIR$/rzaccount/rzaccount.iml" />
       <module fileurl="file://$PROJECT_DIR$/traningone/traningone.iml" filepath="$PROJECT_DIR$/traningone/traningone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/traningone/traningone.iml" filepath="$PROJECT_DIR$/traningone/traningone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/traningtwo/traningtwo.iml" filepath="$PROJECT_DIR$/traningtwo/traningtwo.iml" />
       <module fileurl="file://$PROJECT_DIR$/traningtwo/traningtwo.iml" filepath="$PROJECT_DIR$/traningtwo/traningtwo.iml" />
     </modules>
   </component>

@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
-        <activity android:name=".ACTPager">
+        <activity android:name=".ACTPager"
+            android:exported="false">
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_actpager"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

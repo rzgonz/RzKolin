@@ -2,7 +2,7 @@ package rzgonz.core.kotlin.activity
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
@@ -22,9 +22,7 @@ abstract class BaseActivity<in V: BaseContract.View, P: BaseContract.Presenter<V
         initUI(savedInstanceState)
     }
 
-    override fun getContext(): Context {
-        return  baseContext
-    }
+    override fun getContext(): Context = baseContext
 
 
     override fun showError(error: String?) {

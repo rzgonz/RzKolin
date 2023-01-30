@@ -2,7 +2,7 @@ package rzgonz.core.kotlin.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +12,12 @@ import com.bumptech.glide.Glide
 import rzgonz.core.kotlin.contract.DIBaseContract
 
 
-abstract class DIBaseFragment: Fragment(), DIBaseContract.View{
+abstract class DIBaseFragment: androidx.fragment.app.Fragment(), DIBaseContract.View{
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(initLayout(), container, false)
 
-    override fun getContext(): Context {
-        return activity!!.baseContext
-    }
+    override fun getContext(): Context = requireActivity()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

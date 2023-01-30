@@ -1,10 +1,10 @@
 package kodigo.rzgonz.id.traningone.view
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import kodigo.rzgonz.id.traningone.R
 
 class ACT_Three : AppCompatActivity() {
@@ -17,8 +17,10 @@ class ACT_Three : AppCompatActivity() {
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener { view ->
-            Snackbar.make(view,intent.getStringExtra("hasil"), Snackbar.LENGTH_LONG)
+            intent.getStringExtra("hasil")?.let {
+                Snackbar.make(view, it, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+            }
         }
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

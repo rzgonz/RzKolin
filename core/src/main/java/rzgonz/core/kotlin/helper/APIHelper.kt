@@ -33,29 +33,27 @@ object APIHelper {
      fun  getClient(headers: HashMap<String, String> = HashMap()): Retrofit {
         if (retrofit == null) {
 
-            val client = OkHttpClient().newBuilder().addInterceptor { chain: Interceptor.Chain? ->
-                val original = chain?.request()
-                val request = original?.newBuilder()
+            val client = OkHttpClient().newBuilder().addInterceptor { chain: Interceptor.Chain ->
+                val original = chain.request()
+                val request = original.newBuilder()
                         //?.header("Authorization", Authorization)
-                        ?.method(original.method(), original.body())
+                        .method(original.method, original.body)
 
                 for(data in headers){
                     Headers.set(data.key,data.value)
                 }
 
                 for (items in Headers){
-                    request?.addHeader(items.key,items.value)
+                    request.addHeader(items.key,items.value)
                 }
 
-                chain?.proceed(request?.build()!!)
+                chain.proceed(request.build())
             }
             client.connectTimeout(30, TimeUnit.SECONDS);
             client.readTimeout(30, TimeUnit.SECONDS);
             client.writeTimeout(90, TimeUnit.SECONDS);
 
-            if(authInterceptor!=null){
-                client.addInterceptor(authInterceptor)
-            }
+            authInterceptor?.let { client.addInterceptor(it) }
             if(BASE_URL.contains("https")&& PUBLIC_KEY_HASH.isNotEmpty()) {
 
                 val certificatePinner = CertificatePinner.Builder()

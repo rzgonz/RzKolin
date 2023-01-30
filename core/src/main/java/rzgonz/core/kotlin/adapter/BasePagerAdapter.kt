@@ -1,21 +1,21 @@
 package rzgonz.core.kotlin.adapter
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import rzgonz.core.kotlin.contract.BaseContract
 import rzgonz.core.kotlin.fragment.BaseFragment
 
 /**
  * Created by rzgonz on 9/19/17.
  */
-class BasePagerAdapter : FragmentStatePagerAdapter{
+class BasePagerAdapter : androidx.fragment.app.FragmentStatePagerAdapter {
 
     private val items: ArrayList<BaseFragment<BaseContract.View, BaseContract.Presenter<BaseContract.View>>> = ArrayList()
 
-    constructor(fm: FragmentManager?) : super(fm)
+    constructor(fm: androidx.fragment.app.FragmentManager) : super(fm)
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): androidx.fragment.app.Fragment {
        return items.get(position)
     }
 

@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id 'kotlin-parcelize'
+}
 
 
 android {
@@ -10,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName '1.1.0'
+        versionCode 10
+        versionName '1.2.0'
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -33,28 +35,15 @@ android {
     }
 }
 
-kotlin {
-    experimental {
-        coroutines 'enable'
-    }
-}
-androidExtensions {
-    experimental = true
-}
-kapt {
-    generateStubs true
-}
-
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     //android
-    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
     api "com.android.support:design:$supportLibraryVersion"
     api "com.android.support:recyclerview-v7:$supportLibraryVersion"
     api "com.android.support:cardview-v7:$supportLibraryVersion"
     api "com.android.support:support-v4:$supportLibraryVersion"
-    
+
     api "com.android.support:multidex:$multidex"
     //text
     api "uk.co.chrisjenx:calligraphy:$calligraphy"
@@ -63,14 +52,11 @@ dependencies {
     api "net.gotev:uploadservice:$uploadService"
     api "com.squareup.retrofit2:converter-gson:$retrofit"
     api "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
-    api 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-    // Use if Kotlin user.
-    kapt "com.github.Raizlabs.DBFlow:dbflow-processor:$dbFlow"
+    api 'com.squareup.okhttp3:logging-interceptor:4.9.3'
     //rxjava
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutines"
     api "io.reactivex.rxjava2:rxandroid:$rxAndroid"
     api "io.reactivex.rxjava2:rxkotlin:$rxJava"
-    api 'com.github.tbruyelle:rxpermissions:0.10.2'
+    api 'com.github.tbruyelle:rxpermissions:0.11'
 
     //glide
     api "com.github.bumptech.glide:glide:$glide"
@@ -82,6 +68,3 @@ dependencies {
     kapt ("com.google.dagger:dagger-compiler:$dagger")
 }
 
-repositories {
-    google()
-}

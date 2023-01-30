@@ -14,7 +14,7 @@ import android.os.Parcelable
 
     private var coba : String = ""
 
-    constructor(parcel: Parcel) : this(parcel.readString()) {
+    constructor(parcel: Parcel) : this(parcel.readString() ?: "") {
     }
 
     @JvmOverloads

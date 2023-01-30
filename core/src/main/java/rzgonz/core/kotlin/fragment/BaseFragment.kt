@@ -3,7 +3,7 @@ package rzgonz.core.kotlin.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
@@ -17,7 +17,7 @@ import rzgonz.core.kotlin.contract.BaseContract
 /**
  * Created by rzgonz on 9/19/17.
  */
-abstract class BaseFragment<in V: BaseContract.View, P: BaseContract.Presenter<V>>: Fragment(), BaseContract.View {
+abstract class BaseFragment<in V: BaseContract.View, P: BaseContract.Presenter<V>>: androidx.fragment.app.Fragment(), BaseContract.View {
 
    protected abstract var mPresenter: P
 

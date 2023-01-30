@@ -2,8 +2,8 @@ package kodigo.rzgonz.id.traningtwo
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -40,7 +40,8 @@ class Frag_One : Fragment(),ApiCall {
         tvSection.text = getString(R.string.section_format, arguments?.getInt(ARG_SECTION_NUMBER))
         tvSection.text = "adsasdsad"
         rvOne.adapter = adapter
-        rvOne.layoutManager = GridLayoutManager(activity,2)
+        rvOne.layoutManager =
+            GridLayoutManager(activity, 2)
         ApiPresenter(this).getBarang()
     }
     companion object {

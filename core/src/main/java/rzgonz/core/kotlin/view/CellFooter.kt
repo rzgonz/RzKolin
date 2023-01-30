@@ -2,7 +2,10 @@ package rzgonz.core.kotlin.view
 
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.cell_footer.view.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.TextView
 import rzgonz.core.kotlin.R
 import rzgonz.core.kotlin.holder.BaseItemHolder
 
@@ -16,35 +19,36 @@ class CellFooter(itemView: View) : BaseItemHolder(itemView) {
 //            setOnClickListener { listener(item) }
 //        }
 
-    lateinit var  callBack : cellFooterCallback
+    lateinit var callBack: cellFooterCallback
 
-    fun loadMore(loadMore : Boolean){
-        Log.d("CellLoading","loadMore $loadMore")
-        if(!loadMore){
+    fun loadMore(loadMore: Boolean) {
+        Log.d("CellLoading", "loadMore $loadMore")
+        if (!loadMore) {
             itemView.visibility = View.GONE
         }
 
     }
 
-    fun setListener(listener : cellFooterCallback){
+    fun setListener(listener: cellFooterCallback) {
         callBack = listener
     }
 
-    fun errorLoading(){
-        Log.d("CellLoading","erroLoading")
-        itemView.pbLoading.visibility = View.GONE
-        itemView.imgStatus.setImageResource(R.drawable.ic_error_outline)
-        itemView.tvStatus.visibility = View.GONE
-        itemView.btnTryAgain.visibility = View.VISIBLE
-        itemView.btnTryAgain.setOnClickListener({
-            Log.d("CellLoading","erroLoading $adapterPosition")
-            itemView.pbLoading.visibility = View.VISIBLE
+    fun errorLoading() {
+        Log.d("CellLoading", "erroLoading")
+        itemView.findViewById<ProgressBar>(R.id.pbLoading).visibility = View.GONE
+        itemView.findViewById<ImageView>(R.id.imgStatus)
+            .setImageResource(R.drawable.ic_error_outline)
+        itemView.findViewById<TextView>(R.id.tvStatus).visibility = View.GONE
+        itemView.findViewById<Button>(R.id.btnTryAgain).visibility = View.VISIBLE
+        itemView.findViewById<Button>(R.id.btnTryAgain).setOnClickListener {
+            Log.d("CellLoading", "erroLoading $adapterPosition")
+            itemView.findViewById<ProgressBar>(R.id.pbLoading).visibility = View.VISIBLE
             callBack.onReaload(adapterPosition)
-            itemView.btnTryAgain.visibility = View.GONE
-        })
+            itemView.findViewById<Button>(R.id.btnTryAgain).visibility = View.GONE
+        }
     }
 
-    interface cellFooterCallback{
+    interface cellFooterCallback {
         fun onReaload(position: Int)
     }
 

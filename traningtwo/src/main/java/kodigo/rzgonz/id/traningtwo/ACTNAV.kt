@@ -1,28 +1,33 @@
 package kodigo.rzgonz.id.traningtwo
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.Polyline
+import com.google.android.gms.maps.model.PolylineOptions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.maps.android.SphericalUtil
 import com.google.maps.android.data.geojson.GeoJsonFeature
-import java.util.*
+import java.util.Arrays
 
 
-class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback,GoogleMap.OnMarkerDragListener {
+class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    OnMapReadyCallback, GoogleMap.OnMarkerDragListener {
 
     private var mMap: GoogleMap? = null
 
@@ -37,12 +42,13 @@ class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                .setAction("Action", null).show()
         }
 
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         val toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
         drawer.setDrawerListener(toggle)
         toggle.syncState()
 
@@ -105,6 +111,7 @@ class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
@@ -123,9 +130,11 @@ class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
     private var mPolyline: Polyline? = null
 
     private fun addMarker() {
-        mMarkerA = mMap?.addMarker(MarkerOptions().position(LatLng(-33.9046, 151.155)).draggable(true))
-        mMarkerB = mMap?.addMarker(MarkerOptions().position(LatLng(-33.8291, 151.248)).draggable(true))
-        mMap!!.moveCamera(CameraUpdateFactory.newLatLng(mMarkerA?.position))
+        mMarkerA =
+            mMap?.addMarker(MarkerOptions().position(LatLng(-33.9046, 151.155)).draggable(true))
+        mMarkerB =
+            mMap?.addMarker(MarkerOptions().position(LatLng(-33.8291, 151.248)).draggable(true))
+        mMarkerA?.position?.let { mMap?.moveCamera(CameraUpdateFactory.newLatLng(it)) }
         mPolyline = mMap?.addPolyline(PolylineOptions().geodesic(true))
         showDistance()
     }
@@ -135,8 +144,9 @@ class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         mPolyline?.setPoints(Arrays.asList(mMarkerA?.getPosition(), mMarkerB?.getPosition()));
     }
 
-     fun showDistance() {
-        var distance = SphericalUtil.computeDistanceBetween(mMarkerA?.getPosition(), mMarkerB?.getPosition());
+    fun showDistance() {
+        var distance =
+            SphericalUtil.computeDistanceBetween(mMarkerA?.getPosition(), mMarkerB?.getPosition());
         Log.e("The markers are ", formatNumber(distance) + " apart.");
     }
 
@@ -146,13 +156,14 @@ class ACTNAV : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         updatePolyline()
     }
 
+    override fun onMarkerDragStart(p0: Marker) {
+        TODO("Not yet implemented")
+    }
 
-   override fun onMarkerDrag(marker: Marker) {
+
+    override fun onMarkerDrag(marker: Marker) {
         showDistance()
         updatePolyline()
-    }
-    override fun onMarkerDragStart(p0: Marker?) {
-
     }
 
 

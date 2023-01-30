@@ -5,15 +5,27 @@
     <uses-permission
         android:name="android.permission.AUTHENTICATE_ACCOUNTS"
         android:maxSdkVersion="22" />
-    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true" android:theme="@style/AppTheme">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
         <!-- *** Not really needed here, but convenient for copying to other apps that will use this module *** -->
-        <activity android:name=".account.RzAuthenticatorActivity" android:label="Login"/>
-        <activity android:name=".account.SignUpActivity" android:label="Register" />
+        <activity
+            android:name=".account.RzAuthenticatorActivity"
+            android:exported="false"
+            android:label="Login" />
+        <activity
+            android:name=".account.SignUpActivity"
+            android:exported="false"
+            android:label="Register" />
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +34,13 @@
         </activity>
 
 
-        <service android:name=".account.service.RzAuthenticatorService">
+        <service android:name=".account.service.RzAuthenticatorService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
-            <meta-data android:name="android.accounts.AccountAuthenticator"
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
     </application>

@@ -6,7 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.Toast
@@ -70,7 +70,7 @@ abstract class DIBaseActivity : AppCompatActivity(), DIBaseContract.View {
         Glide.with(context).load(url).into(this)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             android.R.id.home -> finish()
         }

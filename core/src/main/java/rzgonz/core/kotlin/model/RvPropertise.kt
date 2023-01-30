@@ -1,6 +1,6 @@
 package rzgonz.core.kotlin.model
 
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 
 /**
  * Created by rzgonz on 7/13/17.

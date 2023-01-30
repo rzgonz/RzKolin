@@ -1,9 +1,9 @@
 package kodigo.rzgonz.id.traningone.view
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kodigo.rzgonz.id.traningone.R
 import kotlinx.android.synthetic.main.activity_act_list.*
 import java.util.*

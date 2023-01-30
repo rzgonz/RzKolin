@@ -1,18 +1,18 @@
 package rzgonz.core.kotlin.view
 
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import kotlinx.android.synthetic.main.custome_recycle_view.view.*
-import kotlinx.android.synthetic.main.view_loading.view.*
+import android.widget.LinearLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import rzgonz.core.kotlin.R
 import rzgonz.core.kotlin.adapter.BaseRVAdapter
 
@@ -24,14 +24,24 @@ class CustomeRV @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
         defStyle: Int = 0
-) : FrameLayout(context, attrs, defStyle), SwipeRefreshLayout.OnRefreshListener,View.OnClickListener,CellFooter.cellFooterCallback {
+) : FrameLayout(context, attrs, defStyle), androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener,View.OnClickListener,CellFooter.cellFooterCallback {
 
+    private var rv: RecyclerView?
+    private var swl: SwipeRefreshLayout?
+    private var frameLoading: FrameLayout?
+    private var llLoading: LinearLayout?
+    private var view_reload: LinearLayout?
     private lateinit var recyclerAdapter: BaseRVAdapter
     private lateinit var listener: RVListener
     private var isLoading : Boolean = false
 
     init {
         LayoutInflater.from(context).inflate(R.layout.custome_recycle_view, this, true)
+        rv = findViewById(R.id.rv)
+        swl = findViewById(R.id.swl)
+        frameLoading = findViewById(R.id.frameLoading)
+        llLoading = findViewById(R.id.llLoading)
+        view_reload = findViewById(R.id.view_reload)
     }
 
     fun listener(rvListener: RVListener){
@@ -40,20 +50,27 @@ class CustomeRV @JvmOverloads constructor(
     }
 
     fun setLinearLayoutManager(layoutManager: LinearLayoutManager){
-        rv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,getAdapter().rvPropertise.reverseLayout)
+        rv?.layoutManager = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            getAdapter().rvPropertise.reverseLayout
+        )
     }
 
-    fun getRv():RecyclerView{
-        return rv
-    }
+    fun getRv(): RecyclerView? = rv
     fun setAdapter(adapter: BaseRVAdapter){
         recyclerAdapter = adapter
-        rv.adapter = adapter
-        rv.layoutManager = GridLayoutManager(context,adapter.colomCount,getAdapter().rvPropertise.orientation,false)
-        swl.isEnabled = false
+        rv?.adapter = adapter
+        rv?.layoutManager = GridLayoutManager(
+            context,
+            adapter.colomCount,
+            getAdapter().rvPropertise.orientation,
+            false
+        )
+        swl?.isEnabled = false
         if(adapter.rvPropertise.hasRefresh) {
-            swl.isEnabled = true
-            swl.setOnRefreshListener(this)
+            swl?.isEnabled = true
+            swl?.setOnRefreshListener(this)
         }
         val emptyObserver = object : RecyclerView.AdapterDataObserver() {
 
@@ -70,12 +87,12 @@ class CustomeRV @JvmOverloads constructor(
             override fun onItemRangeInserted(positionStart: Int, itemCount: Int) {
                 super.onItemRangeInserted(positionStart, itemCount)
                 Log.e("AdapterDataObserver","false")
-                frameLoading.visibility = View.GONE
+                frameLoading?.visibility = View.GONE
                 if(adapter.rvPropertise.hasLoadmore) {
                     isLoading = false
                 }
                 if(adapter.rvPropertise.hasRefresh) {
-                    swl.isRefreshing = false
+                    swl?.isRefreshing = false
                 }
             }
 
@@ -85,7 +102,7 @@ class CustomeRV @JvmOverloads constructor(
 
         listener.onLoadItems(adapter.rvPropertise.limit,adapter.rvPropertise.offset)
 
-        (rv.layoutManager as GridLayoutManager).spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+        (rv?.layoutManager as GridLayoutManager).spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 if(adapter.rvPropertise.hasHeadear){
                     if(position==0){
@@ -105,13 +122,13 @@ class CustomeRV @JvmOverloads constructor(
 
 
 
-        rv.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+        rv?.addOnScrollListener(object : RecyclerView.OnScrollListener(){
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                val positionView = (rv.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
-                Log.e("onScrolled"," "+ (rv.layoutManager as LinearLayoutManager).itemCount + "-->" + positionView + "--> "+ isLoading)
-                if((rv.layoutManager as LinearLayoutManager).itemCount - 3 <= positionView)
+                val positionView = (rv?.layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+                Log.e("onScrolled"," "+ (rv?.layoutManager as LinearLayoutManager).itemCount + "-->" + positionView + "--> "+ isLoading)
+                if((rv?.layoutManager as LinearLayoutManager).itemCount - 3 <= positionView)
                 if(!isLoading&&adapter.rvPropertise.hasLoadmore){
                     isLoading = true
                     listener.onLoadItems(adapter.rvPropertise.limit, adapter.getItemsCount())
@@ -123,33 +140,32 @@ class CustomeRV @JvmOverloads constructor(
     }
 
     fun errorLoading(){
-        swl.isRefreshing = false
-        llLoading.visibility = View.INVISIBLE
+        swl?.isRefreshing = false
+        llLoading?.visibility = View.INVISIBLE
         if(getAdapter().hasLoadMore){
             if(getAdapter().hasFooter){
                 getAdapter().footerView?.errorLoading()
             }
         }else{
-            view_reload.visibility = View.VISIBLE
-            view_reload.setOnClickListener(this)
+            view_reload?.visibility = View.VISIBLE
+            view_reload?.setOnClickListener(this)
         }
 
     }
 
     fun getLayoutManager(): RecyclerView.LayoutManager? {
-        return rv.layoutManager
+        return rv?.layoutManager
     }
 
-    fun getAdapter(): BaseRVAdapter {
-       return recyclerAdapter
-    }
+    fun getAdapter(): BaseRVAdapter = recyclerAdapter
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onRefresh() {
         Log.d("onRefresh","false")
         isLoading = true
-        frameLoading.visibility = View.VISIBLE
-        llLoading.visibility = View.VISIBLE
-        view_reload.visibility = View.GONE
+        frameLoading?.visibility = View.VISIBLE
+        llLoading?.visibility = View.VISIBLE
+        view_reload?.visibility = View.GONE
         getAdapter().getItems().clear()
         getAdapter().notifyDataSetChanged()
         getAdapter().rvPropertise.offset = 0

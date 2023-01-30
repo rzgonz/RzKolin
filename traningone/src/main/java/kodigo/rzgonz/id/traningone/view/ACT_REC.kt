@@ -1,8 +1,8 @@
 package kodigo.rzgonz.id.traningone.view
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import kodigo.rzgonz.id.traningone.R
 import kodigo.rzgonz.id.traningone.adapter.CustomeAdapter
 import kotlinx.android.synthetic.main.activity_act_rec.*

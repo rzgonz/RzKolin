@@ -1,12 +1,12 @@
 package kodigo.rzgonz.id.traningone.adapter
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import kodigo.rzgonz.id.traningone.R
 
 /**
@@ -16,7 +16,7 @@ class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyViewHolder) {
-            holder.tvOne?.setText("--> " + items!!.get(position))
+            holder.tvOne?.text = "--> " + items!!.get(position)
             holder.imgOne?.setImageResource(images!!.get(position))
         }
     }
@@ -47,9 +47,9 @@ class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 
-    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var tvOne = itemView?.findViewById<TextView>(R.id.tvOne)
-        var imgOne = itemView?.findViewById<ImageView>(R.id.imgOne)
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var tvOne = itemView.findViewById<TextView>(R.id.tvOne)
+        var imgOne = itemView.findViewById<ImageView>(R.id.imgOne)
 
     }
 

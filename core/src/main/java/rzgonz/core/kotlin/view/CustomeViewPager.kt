@@ -1,12 +1,12 @@
 package rzgonz.core.kotlin.view
 
 import android.content.Context
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import rzgonz.core.kotlin.R
  * Created by rzgonz on 9/20/17.
  */
 
-class CustomeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
+class CustomeViewPager(context: Context, attrs: AttributeSet?) : androidx.viewpager.widget.ViewPager(context, attrs) {
     lateinit var listener: PagerListener
     init {
         LayoutInflater.from(context).inflate(R.layout.custome_pager_view, this, true)
@@ -33,7 +33,7 @@ class CustomeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(conte
     }
 
 
-    fun setAdapter(activity: FragmentActivity?) {
+    fun setAdapter(activity: androidx.fragment.app.FragmentActivity?) {
         //mSectionsPagerAdapter = SectionsPagerAdapter(context.supportFragmentManager)
         // Set up the ViewPager with the sections adapter.
         this.adapter = activity?.supportFragmentManager?.let { SectionsPagerAdapter(it) }
@@ -47,12 +47,12 @@ class CustomeViewPager(context: Context, attrs: AttributeSet?) : ViewPager(conte
     interface PagerListener {
         fun initViewPager():Int
         fun initViewTabLayout()
-        fun addFragment():ArrayList<Fragment>
+        fun addFragment():ArrayList<androidx.fragment.app.Fragment>
     }
 
-    inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+    inner class SectionsPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentStatePagerAdapter(fm) {
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             Log.e("cvp","getItem --> "+listener.addFragment().size)

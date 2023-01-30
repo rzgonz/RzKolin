@@ -31,11 +31,11 @@ class ApiModule {
         if (retrofit == null) {
 
             val client = OkHttpClient().newBuilder().addInterceptor(Interceptor {
-                chain: Interceptor.Chain? ->
-                val original = chain?.request()
-                val request = original?.newBuilder()
+                chain: Interceptor.Chain ->
+                val original = chain.request()
+                val request = original.newBuilder()
                         //?.header("Authorization", Authorization)
-                        ?.method(original.method(), original.body())
+                        .method(original.method, original.body)
 
                 for(data in headers){
                     Headers.set(data.key,data.value)
@@ -45,7 +45,7 @@ class ApiModule {
                     request?.addHeader(items.key,items.value)
                 }
 
-                chain?.proceed(request?.build()!!)
+                chain.proceed(request.build())
             })
 
 
@@ -55,9 +55,7 @@ class ApiModule {
                         .build()
                 client.certificatePinner(certificatePinner).build()
 
-                val tlsSocketFactory: TLSSocketFactory
-
-                tlsSocketFactory = TLSSocketFactory()
+                val tlsSocketFactory: TLSSocketFactory = TLSSocketFactory()
                 client.sslSocketFactory(tlsSocketFactory, tlsSocketFactory.systemDefaultTrustManager())
             }
 

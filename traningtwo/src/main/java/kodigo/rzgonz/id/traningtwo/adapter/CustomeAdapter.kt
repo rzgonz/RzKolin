@@ -1,7 +1,7 @@
 package kodigo.rzgonz.id.traningtwo.adapter
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,9 +46,9 @@ class CustomeAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 
-    class MyViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var tvOne = itemView?.findViewById<TextView>(R.id.tvOne)
-        var imgOne = itemView?.findViewById<ImageView>(R.id.imgOne)
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var tvOne = itemView.findViewById<TextView>(R.id.tvOne)
+        var imgOne = itemView.findViewById<ImageView>(R.id.imgOne)
 
     }
 
